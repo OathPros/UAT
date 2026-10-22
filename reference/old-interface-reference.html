@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en"><head><base target="_top"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halo KB · UAT</title>
+<style>
+:root{--ink:#172238;--muted:#697689;--border:#e4e9ef;--wash:#f7f8fa;--white:#fff;--red:#c71f36;--redwash:#fff1f3;--green:#117b4b;--greenwash:#eaf8f0;--amber:#a36509;--amberwash:#fff5df;--dark:#26334a;--shadow:0 10px 35px rgba(19,36,56,.045)}
+*{box-sizing:border-box}body{margin:0;background:#f8fafc;color:var(--ink);font:14px/1.52 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.48}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(26px,3.5vw,42px);letter-spacing:-1.3px;line-height:1.17;margin-bottom:12px}h2{font-size:22px;letter-spacing:-.5px;margin:0}h3{font-size:16px;margin-bottom:8px}p{color:var(--muted)}small,.muted{color:var(--muted)}.hidden{display:none!important}
+.app-header{height:69px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,4vw,58px);gap:15px}.brand{display:flex;gap:12px;align-items:center;font-size:15px;font-weight:760;letter-spacing:-.25px}.brandmark{width:34px;height:34px;background:var(--red);color:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}.head-actions{display:flex;align-items:center;gap:12px}.head-subtitle{font-size:12px;font-weight:600;color:#8b94a3}.button-link{color:#53627a;text-decoration:none;background:transparent;border:0;padding:7px 0;font-size:12px;font-weight:650}.button-link:hover{color:var(--red)}.shell{max-width:1340px;margin:0 auto;padding:34px clamp(16px,4vw,42px) 70px}.narrow{max-width:520px;margin:25px auto}.card{background:#fff;border:1px solid var(--border);border-radius:15px;box-shadow:var(--shadow)}.card-pad{padding:28px}.tag{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:#f1f4f8;border-radius:20px;font-size:11px;font-weight:700;color:#53647c}.kicker{text-transform:uppercase;font-size:10px;color:var(--red);font-weight:850;letter-spacing:1.3px;margin:0 0 13px}.form-group{display:flex;flex-direction:column;gap:6px;margin:15px 0}.form-group label{font-size:12px;color:#45536c;font-weight:750}input,select,textarea{width:100%;padding:11px 12px;border:1px solid #dce2ea;border-radius:9px;background:#fff;color:var(--ink);outline:none;min-height:43px}input:focus,select:focus,textarea:focus{border-color:#c34d60;box-shadow:0 0 0 3px rgba(199,31,54,.10)}textarea{min-height:100px;resize:vertical}.row{display:flex;align-items:center;gap:11px}.between{justify-content:space-between}.wrap{flex-wrap:wrap}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.btn{border:1px solid var(--border);border-radius:9px;padding:10px 16px;background:white;color:var(--ink);font-weight:750;min-height:42px;white-space:nowrap}.btn:hover{border-color:#c7ced9}.btn-primary{background:var(--red);color:#fff;border-color:var(--red)}.btn-primary:hover{background:#ad1930;border-color:#ad1930}.btn-quiet{background:#f5f7fa;border-color:#f5f7fa}.btn-sm{min-height:34px;padding:6px 11px;font-size:12px}.full{width:100%}.hint{font-size:12px;color:var(--muted)}.error{background:#fff1f3;color:#a1192e;font-size:12px;border:1px solid #f4c7d0;border-radius:9px;padding:10px 12px;margin:10px 0}.success{color:var(--green)}
+.welcome{padding:15px 0 20px}.welcome h1{max-width:500px}.welcome p{max-width:570px}.tester-grid{display:grid;grid-template-columns:345px minmax(0,1fr);gap:22px;align-items:start}.sidebar{position:sticky;top:14px;overflow:hidden}.sidebar-top{padding:23px 21px 16px;border-bottom:1px solid var(--border)}.side-controls{padding:15px 18px;border-bottom:1px solid var(--border)}.side-list{overflow-y:auto;max-height:calc(100vh - 300px);min-height:300px;padding:7px}.test-item{width:100%;text-align:left;background:transparent;border:1px solid transparent;padding:11px 12px;border-radius:10px;display:block;margin-bottom:3px}.test-item:hover{background:#f7f8fa}.test-item.selected{background:#fff2f3;border-color:#f5cbd0}.item-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.item-id{font-size:10px;color:#7d8797;font-weight:800;letter-spacing:.6px}.item-title{font-size:12px;line-height:1.45;color:#27364b;font-weight:650;display:block;margin-top:4px}.dot{width:9px;height:9px;border-radius:50%;background:#cbd4de;flex:none}.dot.pass{background:var(--green)}.dot.partialpass{background:#db9223}.dot.fail{background:#cd3347}.dot.skipped{background:#9ba5b6}.dot.pending{background:#d49a2c;box-shadow:0 0 0 2px #fff inset;border:1px solid #ca942b}.dot.failed{background:#c71f36;box-shadow:0 0 0 2px #fff inset;border:1px solid #bd2940}.sync-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#edf3f8;border:1px solid #dbe5ef;border-radius:10px;padding:10px 16px;margin-bottom:16px;font-size:12px;font-weight:680;color:#39516b}.sync-banner.warning{background:#fff5df;border-color:#eacb7c;color:#895400}.sync-banner.danger{background:#fff1f3;border-color:#edb5bf;color:#a1192e}.sidebar-empty{padding:20px;color:var(--muted);font-size:12px}.progress-track{height:7px;border-radius:20px;overflow:hidden;background:#e9edf3;margin-top:11px}.progress-fill{height:100%;background:var(--green);transition:width .2s ease;border-radius:20px}.detail{min-height:570px}.detail-inner{padding:36px clamp(20px,4vw,50px)}.detail-top{display:flex;justify-content:space-between;align-items:center;gap:18px}.detail-kicker{color:#7a8798;font-weight:750;font-size:11px;letter-spacing:.4px}.detail h2{font-size:clamp(23px,3vw,30px);line-height:1.25;letter-spacing:-.9px;margin:15px 0 13px}.expected{padding:18px 20px;border-left:3px solid #3e648b;background:#f4f7fa;border-radius:0 9px 9px 0;margin:22px 0 29px}.expected span{display:block;color:#66758b;font-size:10px;letter-spacing:.8px;text-transform:uppercase;font-weight:850;margin-bottom:5px}.expected p{margin:0;color:#283951;font-size:14px}.results-label{font-size:13px;font-weight:790;margin-bottom:10px}.options{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.result-btn{background:#fff;border:1px solid #dde4ed;border-radius:12px;padding:17px 8px 15px;min-height:88px;text-align:center;display:flex;flex-direction:column;gap:9px;align-items:center;font-weight:750;color:#35445b}.result-btn .glyph{font-size:23px;line-height:1}.result-btn[data-status="Pass"].active{background:var(--greenwash);border-color:#52b18a;color:var(--green)}.result-btn[data-status="Partial pass"].active{background:var(--amberwash);border-color:#dda64a;color:var(--amber)}.result-btn[data-status="Fail"].active{background:var(--redwash);border-color:#db7180;color:#b92239}.result-btn[data-status="Skipped"].active{background:#edf1f5;border-color:#9faabb;color:#536175}.result-btn:hover{border-color:#8897a9}.comment-group{margin-top:25px}.detail-footer{border-top:1px solid var(--border);padding:18px clamp(20px,4vw,50px);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.save-label{font-size:12px;color:#788598}.alert-line{font-size:12px;color:#b92239;min-height:18px;margin:7px 0 0}.breadcrumb{display:flex;gap:8px;color:#8b96a7;font-size:12px;margin:0 0 20px}.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric{padding:19px 20px}.metric strong{font-size:27px;letter-spacing:-.7px;display:block;line-height:1.1}.metric span{font-size:12px;color:#637289;margin-top:7px;display:block}.admin-charts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.admin-box{padding:22px}.bar-row{margin:15px 0}.bar-row .between{font-size:12px;font-weight:700}.bar{height:9px;background:#edf0f4;border-radius:20px;overflow:hidden;margin-top:7px}.bar .fill{height:100%;border-radius:20px;background:#7696b0}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;padding:11px 12px;border-bottom:1px solid #e9edf2;vertical-align:top}th{color:#5e6d80;background:#f8fafc;font-size:10px;text-transform:uppercase;letter-spacing:.4px;position:sticky;top:0}td{color:#344055}tbody tr:hover{background:#fafbfc}.status-chip{padding:4px 8px;border-radius:7px;font-weight:800;font-size:11px;white-space:nowrap;display:inline-block}.status-chip.pass{color:#087344;background:#e9f8ef}.status-chip.partialpass{color:#875900;background:#fff3d7}.status-chip.fail{color:#bd2440;background:#fff0f2}.status-chip.skipped{color:#59677b;background:#eef1f5}.filter-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px}.section-header{margin:35px 0 16px}.section-header h2{margin-bottom:5px}.footnote{margin:24px 0;font-size:11px;color:#94a1b1}.toast{position:fixed;bottom:23px;right:25px;z-index:100;max-width:380px;background:#223047;color:#fff;padding:13px 18px;border-radius:10px;box-shadow:0 15px 45px #17223833;font-size:13px;display:none}.toast.visible{display:block}.admin-login{max-width:470px;margin:50px auto}.admin-login h1{font-size:28px}.admin-tools{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.accent{color:var(--red)}
+@media(max-width:900px){.tester-grid{grid-template-columns:1fr}.sidebar{position:static}.side-list{max-height:300px;min-height:0}.admin-charts{grid-template-columns:1fr}.options{grid-template-columns:repeat(2,1fr)}.head-subtitle{display:none}}
+@media(max-width:590px){.app-header{padding:0 16px}.shell{padding:20px 12px 70px}.card-pad{padding:22px}.detail-inner{padding:25px 18px}.detail-footer{padding:16px 18px}.two,.filter-row{grid-template-columns:1fr}.metric-row{grid-template-columns:1fr 1fr}.metric strong{font-size:23px}.metric{padding:14px}.options{gap:7px}.result-btn{padding:13px 3px;min-height:79px;font-size:12px}.sidebar-top{padding:15px 18px}.brand{font-size:13px}}
+</style></head><body>
+<header class="app-header"><div class="brand"><span class="brandmark">KB</span><span>Knowledge Base UAT</span><span class="head-subtitle">/ HaloITSM</span></div><div class="head-actions"><button id="headerMain" class="button-link hidden" onclick="showTester()">My tests</button><button id="headerAdmin" class="button-link" onclick="showAdmin()">Admin dashboard ↗</button></div></header>
+<main class="shell">
+<section id="joinView" class="narrow">
+  <div class="welcome"><div class="kicker">York University · UIT</div><h1>Test the knowledge experience.</h1><p>Mark each test as Pass, Partial pass, Fail, or Skipped. Add comments when something doesn't work. Your progress is saved automatically.</p></div>
+  <div class="card card-pad"><h2>Join a testing session</h2><p style="margin:6px 0 22px">No email address or password required.</p>
+    <form id="joinForm"><div class="two"><div class="form-group"><label for="firstName">First name</label><input id="firstName" maxlength="40" placeholder="Alex" required autocomplete="given-name"></div><div class="form-group"><label for="lastInitial">Last initial</label><input id="lastInitial" maxlength="1" placeholder="C" required style="text-transform:uppercase"></div></div>
+    <div class="form-group"><label for="team">Your team</label><input id="team" list="teamOptions" maxlength="65" placeholder="Select or enter a team" required><datalist id="teamOptions"><option value="Client Services"><option value="CTS"><option value="SSB IT"><option value="OUR"><option value="UIT"><option value="Other"></datalist></div>
+    <div class="form-group"><label for="sessionCode">Session code</label><input id="sessionCode" value="HALO-UAT" required></div>
+    <details style="font-size:12px;color:#6e7b8e;margin:14px 0 18px"><summary style="cursor:pointer">Resuming on a different browser?</summary><div class="form-group"><label for="recovery">Recovery code (optional)</label><input id="recovery" placeholder="Enter your 16-character recovery code"></div></details>
+    <div id="joinError" class="error hidden" role="alert"></div><button id="resumeButton" class="btn btn-quiet full hidden" type="button" onclick="resumeStoredSession()" style="margin-bottom:9px">↻ Retry saved session</button><button type="submit" class="btn btn-primary full" id="joinButton">Start testing →</button></form>
+  </div><p class="footnote">Use test tickets and synthetic information only. Do not enter personal client information in UAT comments.</p>
+</section>
+<section id="testerView" class="hidden">
+  <div class="breadcrumb"><span>Halo KB UAT</span><span>›</span><span id="testerSessionName"></span></div>
+  <div class="row between wrap" style="margin-bottom:23px"><div><h1 style="margin:0 0 5px">My test cases</h1><p style="margin:0" id="testerWelcome"></p></div><div class="row wrap"><button class="btn btn-sm btn-quiet" onclick="copyRecovery()">Recovery code</button><button class="btn btn-sm" onclick="signOut()">Leave session</button></div></div>
+  <div id="syncBanner" class="sync-banner" role="status" aria-live="polite"><span id="syncBannerText">Results are saved automatically.</span><button type="button" id="retryAll" class="btn btn-sm hidden" onclick="retryAllSaves()">↻ Retry saving</button></div>
+  <div class="tester-grid">
+    <aside class="card sidebar"><div class="sidebar-top"><div class="row between"><strong>Your progress</strong><span id="progressText" class="muted" style="font-size:12px"></span></div><div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div></div><div class="side-controls"><input id="testSearch" placeholder="Search test cases…" oninput="requestUpdateTestList()" aria-label="Search tests"><div class="two" style="margin-top:9px;gap:8px"><select id="categoryFilter" onchange="requestUpdateTestList()" aria-label="Filter by category"><option value="">All categories</option></select><select id="statusFilter" onchange="requestUpdateTestList()" aria-label="Filter by status"><option value="">All tests</option><option value="Not started">Not started</option><option value="Pass">Passed</option><option value="Partial pass">Partial pass</option><option value="Fail">Failed</option><option value="Skipped">Skipped</option></select></div></div><div class="side-list" id="testList"></div></aside>
+    <section class="card detail"><div class="detail-inner" id="testDetail"></div><div class="detail-footer"><div class="row"><button class="btn btn-sm" id="prevButton" onclick="navigateTest(-1)">← Previous</button><button class="btn btn-sm btn-primary" id="nextButton" onclick="navigateTest(1)">Next test →</button></div><div class="row"><button type="button" id="retrySave" class="btn btn-sm hidden" onclick="retryCurrent()">↻ Retry save</button><span class="save-label" id="saveState" aria-live="polite">Choose a result to get started</span></div></div></section>
+  </div>
+  <p class="footnote">Results are saved to the shared UAT Google Sheet. Only the administrator can see all participants' results.</p>
+</section>
+<section id="adminLoginView" class="admin-login hidden"><div class="card card-pad"><div class="kicker">Administration</div><h1>Results dashboard</h1><p>Enter the administrator key generated when you ran setup().</p><form id="adminLoginForm"><div class="form-group"><label for="adminKey">Admin key</label><input id="adminKey" type="password" required autocomplete="off"></div><div id="adminError" class="error hidden"></div><button class="btn btn-primary full" type="submit" id="adminLoginButton">Open dashboard →</button></form><button class="button-link" onclick="showTester()" style="margin-top:12px">← Back to testing</button></div></section>
+<section id="adminView" class="hidden">
+  <div class="row between wrap" style="margin-bottom:22px"><div><div class="kicker">Administration</div><h1 style="margin:0 0 4px">UAT Results</h1><p style="margin:0">Live test executions, team coverage, issues, and export.</p></div><div class="row wrap"><button class="btn btn-sm" onclick="reloadAdmin()">↻ Refresh data</button><button class="btn btn-sm btn-primary" onclick="exportCsv(false)">↓ Export CSV</button><button class="btn btn-sm" onclick="adminLogout()">Sign out</button></div></div>
+  <div class="card card-pad" style="margin-bottom:16px"><div class="filter-row"><div class="form-group" style="margin:0"><label>Session</label><select id="adminSession" onchange="updateAdmin()"><option value="">All sessions</option></select></div><div class="form-group" style="margin:0"><label>Team</label><select id="adminTeam" onchange="updateAdmin()"><option value="">All teams</option></select></div><div class="form-group" style="margin:0"><label>Result</label><select id="adminStatus" onchange="updateAdmin()"><option value="">All results</option><option>Pass</option><option>Partial pass</option><option>Fail</option><option>Skipped</option></select></div></div></div>
+  <div class="metric-row"><div class="card metric"><strong id="adminParticipants">0</strong><span>Participants</span></div><div class="card metric"><strong id="adminRecorded">0</strong><span>Results recorded</span></div><div class="card metric"><strong id="adminPassed">0</strong><span>Passed</span></div><div class="card metric"><strong id="adminIssues" class="accent">0</strong><span>Fail / partial pass</span></div></div>
+  <div class="admin-charts"><div class="card admin-box"><h3>Outcome distribution</h3><div id="outcomeBars"></div></div><div class="card admin-box"><h3>Activity by team</h3><div id="teamBars"></div></div></div>
+  <div class="section-header admin-tools"><div><h2>Recorded test outcomes</h2><p style="margin:3px 0 0;font-size:12px">One row per participant, test, and session. Edited answers replace earlier results.</p></div><div class="row wrap"><input id="adminSearch" oninput="updateAdmin()" placeholder="Search test or comment…" style="width:220px;min-height:36px"><button class="btn btn-sm" onclick="exportCsv(true)">↓ Export issues only</button></div></div>
+  <div class="card table-wrap"><table><thead><tr><th>Test</th><th>Participant</th><th>Team</th><th>Session</th><th>Result</th><th>Comment</th><th>Updated</th></tr></thead><tbody id="resultsTable"></tbody></table></div>
+  <div class="section-header"><h2>Create another testing session</h2><p style="margin:5px 0">Give participants a new code. Choose a manageable subset instead of the entire inventory.</p></div>
+  <div class="card card-pad"><form id="newSessionForm"><div class="two"><div class="form-group"><label for="newName">Session name</label><input id="newName" placeholder="Client Services + CTS — Round 2" maxlength="100" required></div><div class="form-group"><label for="newCode">Session code</label><input id="newCode" placeholder="KB-ROUND2" pattern="[A-Za-z0-9-]{4,25}" required></div></div><div class="form-group"><label for="newScope">Assigned tests</label><select id="newScope" onchange="document.getElementById('customField').classList.toggle('hidden',this.value!=='CUSTOM')"><option value="QUICK">Quick Start (32 essential tests)</option><option value="CORE">Core workflow (151 tests)</option><option value="ALL">Entire test library (215 tests)</option><option value="CUSTOM">Custom test IDs</option></select></div><div id="customField" class="form-group hidden"><label for="customIDs">Test IDs separated by commas</label><textarea id="customIDs" placeholder="A01, A03, B01, H02, K09" style="min-height:70px"></textarea></div><div id="newSessionError" class="error hidden"></div><div class="row between wrap"><span class="hint">A new session gets its own results, even when the same people participate again.</span><button class="btn btn-primary" type="submit">Create session →</button></div></form><div id="sessionsSummary" style="margin-top:17px;font-size:12px;color:#637289"></div></div>
+</section>
+</main><div id="toast" class="toast" role="status"></div>
+<script>
+'use strict';
+const state = {
+  view: 'join', data: null, selected: null, draftStatus: null, draftComment: null,
+  adminPin: null, adminData: null, filtered: [],
+  pending: {}, inFlightBatch: null, saveErrors: {}, saveTimer: null, retryTimer: null,
+  retryCount: 0, localBackupAvailable: true,
+  restoring: false, joining: false, pendingJoinId: null, pendingJoinSignature: null
+};
+const $ = id => document.getElementById(id);
+function esc(value) { return String(value === null || value === undefined ? '' : value).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c])); }
+function gas(func, ...args) {
+  // A failed/slow server request must never leave a button spinning indefinitely.
+  return new Promise((resolve, reject) => {
+    if (typeof google === 'undefined' || !google.script || !google.script.run) {
+      reject(new Error('Open the deployed Google Apps Script web app URL to use the database.'));
+      return;
+    }
+    let settled = false;
+    const timeout = setTimeout(() => {
+      if (!settled) { settled = true; reject(new Error('The server did not respond within 35 seconds. Check your connection and retry.')); }
+    }, 35000);
+    const finish = (fn, value) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      fn(value);
+    };
+    try {
+      google.script.run
+        .withSuccessHandler(value => finish(resolve, value))
+        .withFailureHandler(e => finish(reject, new Error((e && e.message) || String(e))))[func](...args);
+    } catch (e) { finish(reject, e); }
+  });
+}
+function getStored(storageName, key) { try { return window[storageName].getItem(key); } catch (_) { return null; } }
+function setStored(storageName, key, value) { try { window[storageName].setItem(key, value); } catch (_) {} }
+function removeStored(storageName, key) { try { window[storageName].removeItem(key); } catch (_) {} }
+function joinUuid() {
+  if (globalThis.crypto && typeof crypto.randomUUID === 'function') return crypto.randomUUID();
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const n = Math.floor(Math.random()*16);
+    return (c === 'x' ? n : ((n&3)|8)).toString(16);
+  });
+}
+function visible(view) {
+  state.view = view;
+  ['joinView','testerView','adminLoginView','adminView'].forEach(id => $(id).classList.toggle('hidden', id !== view+'View'));
+  $('headerMain').classList.toggle('hidden', !state.data || view === 'tester');
+  $('headerAdmin').classList.toggle('hidden', view === 'admin' || view === 'adminLogin');
+}
+function toast(msg) {
+  const el = $('toast'); el.textContent = msg; el.classList.add('visible');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => el.classList.remove('visible'), 5000);
+}
+function err(id, message) { $(id).textContent = message; $(id).classList.toggle('hidden', !message); }
+function showTester() {
+  if (state.data) { visible('tester'); renderTester(); } else visible('join');
+}
+function showAdmin() {
+  if (state.view === 'tester' && !captureCurrent()) return;
+  visible(state.adminData ? 'admin' : 'adminLogin');
+}
+function signOut() {
+  if (!captureCurrent()) return;
+  const count=Object.keys(state.pending).length;
+  if (count || state.inFlightBatch) {
+    retryAllSaves();
+    toast('Results are still syncing. Sign out after the banner confirms all changes are saved.');
+    return;
+  }
+  if (!confirm('Leave your session on this browser? Recorded results will remain saved.')) return;
+  removeStored('localStorage','haloUatToken'); removeStored('sessionStorage','haloUatPendingJoin');
+  state.data = null; state.selected = null; state.draftStatus = null; state.draftComment = null;
+  state.pending = {}; state.inFlightBatch = null; state.saveErrors = {};
+  visible('join');
+}
+function copyRecovery() {
+  if (!state.data) return;
+  const c = state.data.participant.recoveryCode;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(c).then(() => toast('Recovery code copied: '+c))
+      .catch(() => prompt('Save this recovery code somewhere safe:',c));
+  } else prompt('Save this recovery code somewhere safe:',c);
+}
+function setLoginBusy(isBusy, label) {
+  state.joining = isBusy;
+  const btn = $('joinButton');
+  btn.disabled = isBusy;
+  btn.textContent = isBusy ? label : 'Start testing →';
+  const retry = $('resumeButton');
+  if (retry) retry.disabled = isBusy;
+}
+$('joinForm').addEventListener('submit', async e => {
+  e.preventDefault(); if (state.joining) return;
+  err('joinError',''); setLoginBusy(true, 'Opening your session…');
+  const identity = [$('firstName').value.trim().toLowerCase(),$('lastInitial').value.trim().toLowerCase(),
+                    $('team').value.trim().toLowerCase(),$('sessionCode').value.trim().toUpperCase()].join('|');
+  let token = getStored('sessionStorage','haloUatPendingIdentity') === identity
+    ? getStored('sessionStorage','haloUatPendingJoin') : null;
+  if (!token && state.pendingJoinSignature === identity) token = state.pendingJoinId;
+  if (!token) token = joinUuid();
+  state.pendingJoinId = token; state.pendingJoinSignature = identity;
+  setStored('sessionStorage','haloUatPendingJoin',token);
+  setStored('sessionStorage','haloUatPendingIdentity',identity);
+  try {
+    const payload = {
+      firstName: $('firstName').value, lastInitial: $('lastInitial').value,
+      team: $('team').value, sessionCode: $('sessionCode').value,
+      recoveryCode: $('recovery').value, token
+    };
+    const response = await gas('joinParticipant',payload);
+    acceptParticipant(response);
+  } catch(ex) {
+    err('joinError', 'Could not open your session: '+ex.message+' Your entry has not been confirmed; try again.');
+  } finally { setLoginBusy(false); }
+});
+function acceptParticipant(response) {
+  if (!response || !response.participant || !response.tests || !response.results) throw new Error('Incomplete session response from the server.');
+  state.data = response; state.selected = null; state.draftStatus = null; state.draftComment = null;
+  state.pending = {}; state.inFlightBatch = null; state.saveErrors = {}; state.retryCount = 0;
+  const pendingBackup = getStored('localStorage','haloUatPending:'+response.participant.id);
+  if (pendingBackup) {
+    try {
+      const entries = JSON.parse(pendingBackup);
+      for (const [id, snap] of Object.entries(entries)) {
+        if (!response.tests.some(t=>t.id===id)) continue;
+        if (!snap || !['Pass','Partial pass','Fail','Skipped'].includes(snap.status)) continue;
+        const clean={status:snap.status,comment:String(snap.comment||'').trim().slice(0,2000)};
+        if (['Fail','Partial pass'].includes(clean.status) && clean.comment.length<2) continue;
+        const recorded = response.results[id];
+        if (!recorded || !sameSnapshot(clean,{status:recorded.status,comment:String(recorded.comment||'')})) state.pending[id]=clean;
+      }
+    } catch (e) { toast('A previous local backup could not be read. Verify your last few results.'); }
+  }
+  persistBackup();
+  setStored('localStorage','haloUatToken',response.participant.id);
+  removeStored('sessionStorage','haloUatPendingJoin');
+  removeStored('sessionStorage','haloUatPendingIdentity');
+  state.pendingJoinId=null; state.pendingJoinSignature=null;
+  visible('tester'); renderTester(); if (Object.keys(state.pending).length) scheduleFlush(150);
+}
+async function resumeStoredSession() {
+  const token = getStored('localStorage','haloUatToken');
+  if (!token || state.joining || state.restoring) return;
+  state.restoring = true; err('joinError',''); setLoginBusy(true,'Restoring saved session…');
+  try { acceptParticipant(await gas('getParticipantData',token)); }
+  catch (ex) {
+    // A network/server failure does not invalidate an existing participant. Keep the token for Retry.
+    err('joinError', 'Could not restore the saved session: '+ex.message+' You can retry or join below.');
+    if (/could not be found|expired/i.test(ex.message)) {
+      removeStored('localStorage','haloUatToken');
+      $('resumeButton').classList.add('hidden');
+    } else $('resumeButton').classList.remove('hidden');
+  } finally { state.restoring = false; setLoginBusy(false); }
+}
+function result(id) { return state.data && state.data.results[id] || null; }
+function statusOf(id) { return result(id)?.status || 'Not started'; }
+function slug(s) { return String(s||'').toLowerCase().replace(/[^a-z]/g,''); }
+function currentStatus() { return state.draftStatus || (state.selected && state.pending[state.selected]?.status) || (state.selected && result(state.selected)?.status) || ''; }
+function currentComment() {
+  const textarea = $('testComment');
+  return textarea ? textarea.value : (state.draftComment ?? (state.selected && state.pending[state.selected]?.comment) ?? (state.selected && result(state.selected)?.comment) ?? '');
+}
+function snapshotOfCurrent() { return {status:currentStatus(),comment:currentComment().trim()}; }
+function sameSnapshot(a,b) { return !!a && !!b && a.status===b.status && String(a.comment||'').trim()===String(b.comment||'').trim(); }
+function savedSnapshot(id) {
+  const row=result(id);return row?{status:row.status,comment:String(row.comment||'').trim()}:null;
+}
+function validateSnapshot(candidate,showError) {
+  let issue='';
+  if (!candidate.status && candidate.comment) issue='Choose a test result before continuing.';
+  if (['Partial pass','Fail'].includes(candidate.status) && candidate.comment.length<2)
+    issue='Add a comment of at least two characters to record a partial pass or failure.';
+  if (issue && showError) {
+    $('resultWarning').textContent=issue;
+    setSaveUI('Not saved — '+(candidate.status?'comment required':'result required'),false);
+    if (candidate.status) $('testComment').focus();
+  }
+  return !issue;
+}
+function setSaveUI(message,failure) {
+  $('saveState').textContent=message;
+  $('retrySave').classList.toggle('hidden',!failure);
+}
+function persistBackup() {
+  if (!state.data) return;
+  const key='haloUatPending:'+state.data.participant.id;
+  try {
+    if (Object.keys(state.pending).length) {
+      localStorage.setItem(key,JSON.stringify(state.pending));
+      state.localBackupAvailable=localStorage.getItem(key)!==null;
+    } else {localStorage.removeItem(key);state.localBackupAvailable=true;}
+  } catch (e) {state.localBackupAvailable=false;}
+}
+function renderSyncState() {
+  if (!state.data) return;
+  const count=Object.keys(state.pending).length;
+  const failed=Object.keys(state.saveErrors).filter(id=>state.pending[id]).length;
+  const banner=$('syncBanner'), label=$('syncBannerText');
+  banner.classList.toggle('danger',failed>0);
+  banner.classList.toggle('warning',!failed&&(count>0||!state.localBackupAvailable));
+  $('retryAll').classList.toggle('hidden',!failed);
+  if (failed) label.textContent=failed+' save(s) failed; '+count+' unconfirmed result(s). Your entries remain on this page. Select Retry saving.';
+  else if (count) label.textContent=count+' result(s) waiting for Google Sheets'+(state.inFlightBatch?' — saving in background…':'…')+(state.localBackupAvailable?'':' · Browser backup unavailable; keep this tab open.');
+  else label.textContent='✓ All recorded results are saved to Google Sheets.';
+  if (state.selected) {
+    const id=state.selected;
+    if (state.saveErrors[id]) setSaveUI('Save failed — not recorded',true);
+    else if (state.pending[id]) setSaveUI('Saving in background…',false);
+    else if (result(id)) setSaveUI('✓ Saved to Google Sheet',false);
+    else setSaveUI('Not recorded',false);
+  }
+}
+function refreshProgressAndBadges() {
+  if (!state.data) return;
+  const tests=state.data.tests;
+  const complete=tests.filter(t=>statusOf(t.id)!=='Not started' && !state.pending[t.id]).length;
+  $('progressText').textContent=complete+' / '+tests.length+' confirmed';
+  $('progressFill').style.width=(tests.length?complete/tests.length*100:0)+'%';
+  $('testList').querySelectorAll('[data-test]').forEach(button=>{
+    const id=button.getAttribute('data-test');const badge=button.querySelector('.dot');if(!badge)return;
+    const pending=!!state.pending[id]; const failed=pending&&!!state.saveErrors[id];
+    badge.className='dot '+(failed?'failed':pending?'pending':slug(statusOf(id)));
+    badge.title=failed?'Save failed':pending?'Pending save: '+state.pending[id].status:statusOf(id);
+  });
+  renderSyncState();
+}
+function scheduleFlush(delay=240) {
+  clearTimeout(state.saveTimer);
+  state.saveTimer=setTimeout(()=>{void flushQueue();},delay);
+}
+function recordDraft(id,snap) {
+  if (!state.data || !id || !snap.status) return;
+  const saved=savedSnapshot(id), active=state.inFlightBatch && state.inFlightBatch[id];
+  if (sameSnapshot(snap,saved) && !active) {
+    if (state.pending[id]) { delete state.pending[id];delete state.saveErrors[id];persistBackup(); }
+  } else if (!sameSnapshot(snap,state.pending[id])) {
+    state.pending[id]={status:snap.status,comment:snap.comment};
+    delete state.saveErrors[id];state.retryCount=0;
+    persistBackup();
+    scheduleFlush();
+  }
+  refreshProgressAndBadges();
+}
+function captureCurrent() {
+  clearTimeout(state.saveTimer);
+  if (!state.data || !state.selected) return true;
+  const snap=snapshotOfCurrent();
+  if (!validateSnapshot(snap,true)) return false;
+  if (snap.status) recordDraft(state.selected,snap);
+  if (Object.keys(state.pending).length) scheduleFlush(60);
+  return true;
+}
+function flushQueue() {
+  if (!state.data || state.inFlightBatch) return;
+  const entries=Object.entries(state.pending).slice(0,15);
+  if (!entries.length) {refreshProgressAndBadges();return;}
+  const batch=Object.fromEntries(entries.map(([id,s])=>[id,{...s}]));
+  state.inFlightBatch=batch;
+  const rows=entries.map(([testId,s])=>({testId,status:s.status,comment:s.comment}));
+  refreshProgressAndBadges();
+  gas('saveResultsBatch',state.data.participant.id,rows).then(savedRows=>{
+    if (!state.data) return;
+    for (const saved of savedRows) {
+      const id=saved.testId;
+      state.data.results[id]={status:saved.status,comment:saved.comment,updatedAt:saved.updatedAt};
+      if (sameSnapshot(state.pending[id],batch[id])) delete state.pending[id];
+      delete state.saveErrors[id];
+      if (state.selected===id && !state.pending[id] && sameSnapshot(snapshotOfCurrent(),batch[id]))
+        $('resultWarning').textContent='';
+    }
+    state.retryCount=0;
+    persistBackup();
+  }).catch(ex=>{
+    for (const [id] of entries) if (state.pending[id]) state.saveErrors[id]=ex.message;
+    state.retryCount++;
+    toast('Some results could not sync. Your entries are still pending.');
+    if (state.selected && state.saveErrors[state.selected])
+      $('resultWarning').textContent='Save failed: '+ex.message+'. Your result is pending, not recorded. Use Retry saving.';
+  }).finally(()=>{
+    state.inFlightBatch=null;
+    refreshProgressAndBadges();
+    if (!Object.keys(state.pending).length) return;
+    const hasFailures=Object.keys(state.saveErrors).length>0;
+    if (!hasFailures) scheduleFlush(120);
+    else if (state.retryCount <= 2) scheduleFlush([0,2200,6000][state.retryCount]);
+    // After three failed attempts keep data locally and show a prominent manual Retry action.
+  });
+}
+function retryAllSaves() {
+  state.saveErrors={};state.retryCount=0;
+  if (state.view==='tester') {
+    if (!captureCurrent()) return;
+    $('resultWarning').textContent='';
+  }
+  scheduleFlush(0);refreshProgressAndBadges();
+}
+function retryCurrent() {retryAllSaves();}
+function renderTester() {
+  if (!state.data) return;
+  const p = state.data.participant;
+  $('testerWelcome').textContent = p.firstName+' '+p.lastInitial+'. · '+p.team;
+  $('testerSessionName').textContent = state.data.session.name;
+  const categories = [...new Set(state.data.tests.map(t=>t.category))];
+  $('categoryFilter').innerHTML = '<option value="">All categories</option>'+
+    categories.map(c=>'<option value="'+esc(c)+'">'+esc(c)+'</option>').join('');
+  updateTestList();
+}
+function updateTestList() {
+  if (!state.data) return;
+  const search = $('testSearch').value.trim().toLowerCase();
+  const category = $('categoryFilter').value, status = $('statusFilter').value;
+  const tests = state.data.tests;
+  state.filtered = tests.filter(t =>
+    (!search || [t.id,t.title,t.category,t.expected].join(' ').toLowerCase().includes(search)) &&
+    (!category || t.category === category) && (!status || statusOf(t.id) === status));
+  if (!state.selected || !tests.some(t => t.id === state.selected))
+    state.selected = (tests.find(t => !result(t.id)) || tests[0] || {}).id;
+  if (state.filtered.length && !state.filtered.some(t=>t.id === state.selected)) {
+    // Only called after requestUpdateTestList has flushed edits (or at first render).
+    state.selected = state.filtered[0].id;
+    state.draftStatus = null; state.draftComment = null;
+  }
+  $('testList').innerHTML = state.filtered.map(t =>
+    '<button type="button" class="test-item '+(t.id===state.selected?'selected':'')+'" data-test="'+esc(t.id)+'">'+
+    '<span class="item-head"><span class="item-id">'+esc(t.id)+' · '+esc(t.category)+'</span>'+
+    '<span class="dot '+slug(statusOf(t.id))+'" title="'+esc(statusOf(t.id))+'"></span></span>'+
+    '<span class="item-title">'+esc(t.title)+'</span></button>').join('') ||
+    '<div class="sidebar-empty">No tests match these filters.</div>';
+  $('testList').querySelectorAll('[data-test]').forEach(b => b.onclick = () => selectTest(b.getAttribute('data-test')));
+  renderDetail(); refreshProgressAndBadges();
+}
+function requestUpdateTestList() {
+  if (!state.data || !captureCurrent()) return;
+  updateTestList();
+}
+function selectTest(id) {
+  if (!id || !state.data || !state.data.tests.some(t=>t.id===id) || id===state.selected) return;
+  if (!captureCurrent()) return;
+  state.selected=id;state.draftStatus=null;state.draftComment=null;
+  updateTestList();
+}
+function renderDetail() {
+  const test = state.data.tests.find(t => t.id === state.selected);
+  if (!test) { $('testDetail').innerHTML = '<div class="muted">No assigned test cases.</div>';return; }
+  const r = result(test.id);
+  const status = state.draftStatus || state.pending[test.id]?.status || r?.status || '';
+  const comment = state.draftComment === null ? (state.pending[test.id]?.comment ?? r?.comment ?? '') : state.draftComment;
+  const idx = state.filtered.findIndex(t=>t.id===test.id);
+  $('testDetail').innerHTML =
+    '<div class="detail-top"><span class="detail-kicker">'+esc(test.id)+' · '+esc(test.category)+'</span><span class="tag">'+esc(test.priority)+'</span></div>'+ 
+    '<h2>'+esc(test.title)+'</h2><p style="font-size:13px">Perform this action in Halo using your assigned test account and test content.</p>'+ 
+    '<div class="expected"><span>Expected result</span><p>'+esc(test.expected)+'</p></div><div class="results-label">What was your result?</div>'+ 
+    '<div class="options">'+[['Pass','✓'],['Partial pass','◐'],['Fail','×'],['Skipped','→']].map(x=>
+      '<button type="button" class="result-btn '+(x[0]===status?'active':'')+'" data-status="'+x[0]+'">'+
+      '<span class="glyph">'+x[1]+'</span><span>'+x[0]+'</span></button>').join('')+'</div>'+ 
+    '<div class="comment-group"><div class="form-group"><label for="testComment">Comments <span id="commentRequired" class="muted">'+
+    (status==='Fail'||status==='Partial pass'?'(required — at least 2 characters)':'(optional)')+'</span></label>'+ 
+    '<textarea id="testComment" maxlength="2000" placeholder="What happened? What worked or didn’t work?">'+esc(comment)+'</textarea>'+ 
+    '</div><div class="alert-line" id="resultWarning" role="alert"></div></div>';
+  $('testDetail').querySelectorAll('[data-status]').forEach(b => b.onclick = () => chooseStatus(b.getAttribute('data-status')));
+  $('testComment').addEventListener('input',onCommentInput);
+  $('testComment').addEventListener('blur',onCommentBlur);
+  $('prevButton').disabled = idx <= 0;
+  $('nextButton').disabled = idx < 0 || idx >= state.filtered.length-1;
+  const error=state.saveErrors[test.id];
+  if (error) $('resultWarning').textContent='Save failed: '+error+'. Your result is pending, not recorded. Retry the save.';
+  renderSyncState();
+  if (status && ['Fail','Partial pass'].includes(status) && comment.trim().length < 2)
+    validateSnapshot({status,comment:comment.trim()},true);
+}
+function chooseStatus(status) {
+  state.draftStatus=status;state.draftComment=currentComment();
+  $('testDetail').querySelectorAll('[data-status]').forEach(b=>b.classList.toggle('active',b.getAttribute('data-status')===status));
+  $('commentRequired').textContent=['Fail','Partial pass'].includes(status)?'(required — at least 2 characters)':'(optional)';
+  const snap=snapshotOfCurrent();
+  if (!validateSnapshot(snap,true)) return;
+  $('resultWarning').textContent='';
+  recordDraft(state.selected,snap);
+}
+function onCommentInput() {
+  state.draftComment=$('testComment').value;
+  clearTimeout(state.saveTimer);
+  const snap=snapshotOfCurrent();
+  if (!validateSnapshot(snap,true)) return;
+  $('resultWarning').textContent='';
+  if (snap.status) {
+    // Back up changed text immediately. Only send to Sheets after typing pauses.
+    state.pending[state.selected]={status:snap.status,comment:snap.comment};
+    delete state.saveErrors[state.selected];state.retryCount=0;
+    persistBackup();refreshProgressAndBadges();
+    scheduleFlush(850);
+  }
+}
+function onCommentBlur() {
+  if (validateSnapshot(snapshotOfCurrent(),false)) captureCurrent();
+}
+function navigateTest(offset) {
+  const i=state.filtered.findIndex(t=>t.id===state.selected);
+  const target=state.filtered[i+offset];
+  if (target) selectTest(target.id);
+}
+window.addEventListener('beforeunload',e=>{
+  if (!state.data) return;
+  const snap=state.view==='tester'&&state.selected?snapshotOfCurrent():null;
+  const dirty=Object.keys(state.pending).length>0 || !!state.inFlightBatch ||
+    (snap && snap.status && !sameSnapshot(snap,savedSnapshot(state.selected)));
+  if (dirty) {e.preventDefault();e.returnValue='';}
+});
+$('adminLoginForm').addEventListener('submit',async e=>{
+  e.preventDefault();err('adminError','');const b=$('adminLoginButton');b.disabled=true;
+  try {const pin=$('adminKey').value.trim();const data=await gas('adminGetDashboard',pin);state.adminPin=pin;state.adminData=data;visible('admin');renderAdmin();}
+  catch(ex){err('adminError',ex.message);}finally{b.disabled=false;}
+});
+function adminLogout(){state.adminPin=null;state.adminData=null;$('adminKey').value='';visible('adminLogin');}
+async function reloadAdmin(){try{state.adminData=await gas('adminGetDashboard',state.adminPin);renderAdmin();toast('Dashboard refreshed');}catch(ex){toast('Refresh failed: '+ex.message);}}
+function renderAdmin(){const d=state.adminData;if(!d)return;const before=$('adminSession').value;const currentTeam=$('adminTeam').value;$('adminSession').innerHTML='<option value="">All sessions</option>'+d.sessions.map(s=>'<option value="'+esc(s.code)+'">'+esc(s.name)+' ('+esc(s.code)+')</option>').join('');$('adminSession').value=before;const teams=[...new Set(d.participants.map(p=>p.team))].sort();$('adminTeam').innerHTML='<option value="">All teams</option>'+teams.map(t=>'<option value="'+esc(t)+'">'+esc(t)+'</option>').join('');$('adminTeam').value=currentTeam;$('sessionsSummary').innerHTML='<strong>Available sessions:</strong> '+d.sessions.map(s=>'<span class="tag" style="margin:4px">'+esc(s.code)+' · '+esc(s.scope.toLowerCase())+'</span>').join('');updateAdmin();}
+function filteredAdminRows(){const d=state.adminData,people=Object.fromEntries(d.participants.map(p=>[p.id,p])),tests=Object.fromEntries(d.tests.map(t=>[t.id,t]));return d.results.map(r=>({...r,person:people[r.participantId]||{name:'Unknown',team:'Unknown'},test:tests[r.testId]||{id:r.testId,title:'Unknown test',category:''}})).filter(r=>(!$('adminSession').value||r.sessionCode===$('adminSession').value)&&(!$('adminTeam').value||r.person.team===$('adminTeam').value)&&(!$('adminStatus').value||r.status===$('adminStatus').value)&&(!$('adminSearch').value.trim()||[r.test.id,r.test.title,r.comment,r.person.name].join(' ').toLowerCase().includes($('adminSearch').value.trim().toLowerCase()))).sort((a,b)=>String(b.updatedAt).localeCompare(String(a.updatedAt)));}
+function updateAdmin(){if(!state.adminData)return;const rows=filteredAdminRows();const d=state.adminData;const participants=d.participants.filter(p=>(!$('adminSession').value||p.sessionCode===$('adminSession').value)&&(!$('adminTeam').value||p.team===$('adminTeam').value));$('adminParticipants').textContent=participants.length;$('adminRecorded').textContent=rows.length;$('adminPassed').textContent=rows.filter(r=>r.status==='Pass').length;$('adminIssues').textContent=rows.filter(r=>r.status==='Fail'||r.status==='Partial pass').length;const statusKeys=['Pass','Partial pass','Fail','Skipped'];const biggest=Math.max(1,...statusKeys.map(s=>rows.filter(r=>r.status===s).length));const colors={'Pass':'#188b59','Partial pass':'#d49a2c','Fail':'#cc2944','Skipped':'#9ca9b8'};$('outcomeBars').innerHTML=statusKeys.map(s=>{const n=rows.filter(r=>r.status===s).length;return '<div class="bar-row"><div class="row between"><span>'+s+'</span><span>'+n+'</span></div><div class="bar"><div class="fill" style="width:'+(n/biggest*100)+'%;background:'+colors[s]+'"></div></div></div>';}).join('');const tnames=[...new Set(rows.map(r=>r.person.team))].sort(),tmax=Math.max(1,...tnames.map(t=>rows.filter(r=>r.person.team===t).length));$('teamBars').innerHTML=tnames.map(t=>{const n=rows.filter(r=>r.person.team===t).length;return '<div class="bar-row"><div class="row between"><span>'+esc(t)+'</span><span>'+n+'</span></div><div class="bar"><div class="fill" style="width:'+(n/tmax*100)+'%"></div></div></div>';}).join('')||'<p>No results have been recorded yet.</p>';
+ $('resultsTable').innerHTML=rows.map(r=>'<tr><td><strong>'+esc(r.testId)+'</strong><div>'+esc(r.test.title)+'</div></td><td>'+esc(r.person.name)+'</td><td>'+esc(r.person.team)+'</td><td>'+esc(r.sessionCode)+'</td><td><span class="status-chip '+slug(r.status)+'">'+esc(r.status)+'</span></td><td style="max-width:340px;white-space:pre-wrap;overflow-wrap:anywhere">'+esc(r.comment)+'</td><td>'+esc(new Date(r.updatedAt).toLocaleString())+'</td></tr>').join('')||'<tr><td colspan="7" style="text-align:center;padding:25px">No recorded results match the selected filters.</td></tr>';}
+function csvCell(v){let s=String(v===null||v===undefined?'':v);if(/^[\s]*[=+@\-\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}
+function exportCsv(issuesOnly){let rows=filteredAdminRows();if(issuesOnly)rows=rows.filter(r=>r.status==='Fail'||r.status==='Partial pass');const columns=['Session','Participant','Team','Test ID','Category','Priority','Test','Expected result','Status','Comment','Last updated'];const data=rows.map(r=>[r.sessionCode,r.person.name,r.person.team,r.testId,r.test.category,r.test.priority,r.test.title,r.test.expected,r.status,r.comment,r.updatedAt]);const csv='\ufeff'+[columns,...data].map(r=>r.map(csvCell).join(',')).join('\r\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='Halo_KB_UAT_'+(issuesOnly?'Issues_':'Results_')+new Date().toISOString().slice(0,10)+'.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Exported '+rows.length+' results.');}
+$('newSessionForm').addEventListener('submit',async e=>{e.preventDefault();err('newSessionError','');try{const session=await gas('adminCreateSession',state.adminPin,{name:$('newName').value,code:$('newCode').value,scope:$('newScope').value,selectedIds:$('customIDs').value});$('newSessionForm').reset();$('customField').classList.add('hidden');await reloadAdmin();toast('Created session '+session.code+'. Share that code with testers.');}catch(ex){err('newSessionError',ex.message);}});
+window.addEventListener('load',()=>{ if (getStored('localStorage','haloUatToken')) void resumeStoredSession(); });
+</script></body></html>

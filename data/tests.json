@@ -1,0 +1,1722 @@
+[
+  {
+    "id": "A01",
+    "category": "Authentication, access & navigation",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Sign in to Halo",
+    "expected_result": "Agent authenticates using normal credentials."
+  },
+  {
+    "id": "A02",
+    "category": "Authentication, access & navigation",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Confirm correct agent identity",
+    "expected_result": "Name, team membership, and assigned role are correct."
+  },
+  {
+    "id": "A03",
+    "category": "Authentication, access & navigation",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Access Knowledge Base",
+    "expected_result": "KB module is accessible from expected navigation."
+  },
+  {
+    "id": "A04",
+    "category": "Authentication, access & navigation",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Open KB landing page",
+    "expected_result": "Page loads without errors; available sections display."
+  },
+  {
+    "id": "A05",
+    "category": "Authentication, access & navigation",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Access article list",
+    "expected_result": "Agent can browse articles they are authorized to see."
+  },
+  {
+    "id": "A06",
+    "category": "Authentication, access & navigation",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Access KB from a ticket",
+    "expected_result": "Agent can reach KB functions from the ticket workflow."
+  },
+  {
+    "id": "A07",
+    "category": "Authentication, access & navigation",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Open existing article",
+    "expected_result": "Article loads with expected content and actions."
+  },
+  {
+    "id": "A08",
+    "category": "Authentication, access & navigation",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Navigate between views",
+    "expected_result": "Switching between ticket, article, search, and KB does not lose work."
+  },
+  {
+    "id": "A09",
+    "category": "Authentication, access & navigation",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Check agent permissions",
+    "expected_result": "Create, edit, version, and delete actions match the role."
+  },
+  {
+    "id": "A10",
+    "category": "Authentication, access & navigation",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Verify access after a new session",
+    "expected_result": "Access remains consistent after signing out and in."
+  },
+  {
+    "id": "B01",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search exact article title",
+    "expected_result": "Correct article appears in search results."
+  },
+  {
+    "id": "B02",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search partial title",
+    "expected_result": "Relevant article remains discoverable."
+  },
+  {
+    "id": "B03",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search using ticket symptoms",
+    "expected_result": "Agent can find knowledge using natural descriptions of the issue."
+  },
+  {
+    "id": "B04",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search using common terminology",
+    "expected_result": "Articles appear for terminology familiar to frontline agents."
+  },
+  {
+    "id": "B05",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search using alternative terminology",
+    "expected_result": "Synonyms, acronyms, and institutional terms behave as configured."
+  },
+  {
+    "id": "B06",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search using article tags",
+    "expected_result": "Relevant tagged articles appear."
+  },
+  {
+    "id": "B07",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search using metadata keywords",
+    "expected_result": "Configured metadata is indexed and discoverable."
+  },
+  {
+    "id": "B08",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search for words in description",
+    "expected_result": "Matching descriptions are searchable."
+  },
+  {
+    "id": "B09",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search for text in resolution",
+    "expected_result": "Resolution indexing matches configured full-text search."
+  },
+  {
+    "id": "B10",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search using multiple keywords",
+    "expected_result": "Results are appropriately filtered or ranked."
+  },
+  {
+    "id": "B11",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search for nonexistent content",
+    "expected_result": "Clear no-results state appears."
+  },
+  {
+    "id": "B12",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Search for restricted article",
+    "expected_result": "Unauthorized article is not returned."
+  },
+  {
+    "id": "B13",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Filter results by FAQ list",
+    "expected_result": "Only matching articles appear."
+  },
+  {
+    "id": "B14",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Sort search results",
+    "expected_result": "Available sort options produce understandable results."
+  },
+  {
+    "id": "B15",
+    "category": "Knowledge discovery, searching & filtering",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search from different entry points",
+    "expected_result": "Main KB, ticket, and enabled entry points return appropriate results."
+  },
+  {
+    "id": "C01",
+    "category": "Reading & assessing knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Read existing article",
+    "expected_result": "Title, description, and resolution display correctly."
+  },
+  {
+    "id": "C02",
+    "category": "Reading & assessing knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Assess relevance",
+    "expected_result": "Agent can determine whether article addresses the ticket."
+  },
+  {
+    "id": "C03",
+    "category": "Reading & assessing knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Follow troubleshooting instructions",
+    "expected_result": "Agent can perform documented procedure successfully."
+  },
+  {
+    "id": "C04",
+    "category": "Reading & assessing knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Review article metadata",
+    "expected_result": "Relevant tags, dates, and classification details are accessible."
+  },
+  {
+    "id": "C05",
+    "category": "Reading & assessing knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Identify article version",
+    "expected_result": "Agent can distinguish current from historical content."
+  },
+  {
+    "id": "C06",
+    "category": "Reading & assessing knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "View related knowledge",
+    "expected_result": "Related article links display and work."
+  },
+  {
+    "id": "C07",
+    "category": "Reading & assessing knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "View attachments and images",
+    "expected_result": "Supported images and attachments open correctly."
+  },
+  {
+    "id": "C08",
+    "category": "Reading & assessing knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Read Internal Memo",
+    "expected_result": "Authorized agent can read agent-only instructions."
+  },
+  {
+    "id": "C09",
+    "category": "Reading & assessing knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Identify missing or inaccurate knowledge",
+    "expected_result": "Agent knows whether to reuse, version, or create knowledge."
+  },
+  {
+    "id": "D01",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Locate New Article action",
+    "expected_result": "Agent finds creation control without assistance."
+  },
+  {
+    "id": "D02",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Create an article",
+    "expected_result": "Article saves successfully."
+  },
+  {
+    "id": "D03",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Enter descriptive title",
+    "expected_result": "Title persists and displays correctly."
+  },
+  {
+    "id": "D04",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Enter problem description",
+    "expected_result": "Description persists in appropriate views."
+  },
+  {
+    "id": "D05",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Enter resolution instructions",
+    "expected_result": "Resolution saves with intended formatting."
+  },
+  {
+    "id": "D06",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Add Internal Memo",
+    "expected_result": "Internal content stays separate from public content."
+  },
+  {
+    "id": "D07",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Add required tags",
+    "expected_result": "Tags store and are searchable."
+  },
+  {
+    "id": "D08",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Add meta keywords",
+    "expected_result": "Metadata persists and influences search where configured."
+  },
+  {
+    "id": "D09",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Select correct article type",
+    "expected_result": "Article classification saves."
+  },
+  {
+    "id": "D10",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Assign article to FAQ list",
+    "expected_result": "Article appears in selected list."
+  },
+  {
+    "id": "D11",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Assign primary FAQ list",
+    "expected_result": "Primary classification saves correctly."
+  },
+  {
+    "id": "D12",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Set Active status",
+    "expected_result": "Article becomes available in configured views."
+  },
+  {
+    "id": "D13",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Set next review date",
+    "expected_result": "Date persists after saving."
+  },
+  {
+    "id": "D14",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Configure team access",
+    "expected_result": "Selected team permissions are retained."
+  },
+  {
+    "id": "D15",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Configure end-user access",
+    "expected_result": "User visibility follows selected restrictions."
+  },
+  {
+    "id": "D16",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Reopen saved article",
+    "expected_result": "All fields and content remain intact."
+  },
+  {
+    "id": "D17",
+    "category": "Creating knowledge directly in KB",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Find newly created article",
+    "expected_result": "Article is searchable within agreed indexing interval."
+  },
+  {
+    "id": "E01",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Apply headings and paragraphs",
+    "expected_result": "Saved formatting remains readable."
+  },
+  {
+    "id": "E02",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Add numbered instructions",
+    "expected_result": "Steps retain sequence and indentation."
+  },
+  {
+    "id": "E03",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Add hyperlinks",
+    "expected_result": "Internal and external links open correctly."
+  },
+  {
+    "id": "E04",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Add screenshots",
+    "expected_result": "Images display at appropriate size."
+  },
+  {
+    "id": "E05",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Upload attachments",
+    "expected_result": "Files save and authorized readers can retrieve them."
+  },
+  {
+    "id": "E06",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Add tables",
+    "expected_result": "Tables display correctly in saved articles."
+  },
+  {
+    "id": "E07",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Paste formatted text",
+    "expected_result": "Pasted content does not disrupt layout."
+  },
+  {
+    "id": "E08",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Enter special characters",
+    "expected_result": "Accents, apostrophes, symbols, and technical characters persist."
+  },
+  {
+    "id": "E09",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Create article using a template",
+    "expected_result": "Template populates intended fields when enabled."
+  },
+  {
+    "id": "E10",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Clone an existing article",
+    "expected_result": "Distinct article created without overwriting original."
+  },
+  {
+    "id": "E11",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Attempt save with required fields missing",
+    "expected_result": "Validation prevents invalid submission."
+  },
+  {
+    "id": "E12",
+    "category": "Article editor & attachments",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Cancel article creation",
+    "expected_result": "No unintended article is created or modified."
+  },
+  {
+    "id": "F01",
+    "category": "Creating knowledge from tickets",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Open assigned ticket",
+    "expected_result": "Agent accesses necessary ticket information."
+  },
+  {
+    "id": "F02",
+    "category": "Creating knowledge from tickets",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search for knowledge from ticket",
+    "expected_result": "Search works within ticket workflow."
+  },
+  {
+    "id": "F03",
+    "category": "Creating knowledge from tickets",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Confirm no existing solution",
+    "expected_result": "Agent reasonably determines knowledge is missing."
+  },
+  {
+    "id": "F04",
+    "category": "Creating knowledge from tickets",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Initiate creation from ticket",
+    "expected_result": "Configured article-creation function is available."
+  },
+  {
+    "id": "F05",
+    "category": "Creating knowledge from tickets",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Create article using ticket information",
+    "expected_result": "Relevant details transfer or are entered efficiently."
+  },
+  {
+    "id": "F06",
+    "category": "Creating knowledge from tickets",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Remove requester-specific information",
+    "expected_result": "Article contains reusable knowledge without personal ticket details."
+  },
+  {
+    "id": "F07",
+    "category": "Creating knowledge from tickets",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Save newly created article",
+    "expected_result": "Article saves successfully."
+  },
+  {
+    "id": "F08",
+    "category": "Creating knowledge from tickets",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Verify article-ticket relationship",
+    "expected_result": "Created article is associated with ticket if configured."
+  },
+  {
+    "id": "F09",
+    "category": "Creating knowledge from tickets",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Create article during ticket resolution",
+    "expected_result": "Documented resolution-time flow works."
+  },
+  {
+    "id": "F10",
+    "category": "Creating knowledge from tickets",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Complete ticket resolution",
+    "expected_result": "Ticket closes without losing article or association."
+  },
+  {
+    "id": "G01",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Open article for improvement",
+    "expected_result": "Agent can access versioning function."
+  },
+  {
+    "id": "G02",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Create a new version",
+    "expected_result": "New version is created."
+  },
+  {
+    "id": "G03",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Modify resolution instructions",
+    "expected_result": "New instructions save in new version."
+  },
+  {
+    "id": "G04",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Improve title or description",
+    "expected_result": "Change appears in appropriate version."
+  },
+  {
+    "id": "G05",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Update article metadata",
+    "expected_result": "Fields behave according to configuration."
+  },
+  {
+    "id": "G06",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Verify original version retained",
+    "expected_result": "Earlier version remains accessible to authorized agents."
+  },
+  {
+    "id": "G07",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Identify latest version",
+    "expected_result": "Current version can be reliably located."
+  },
+  {
+    "id": "G08",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Open previous versions",
+    "expected_result": "Historical versions remain accessible to authorized readers."
+  },
+  {
+    "id": "G09",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Compare old and new content",
+    "expected_result": "Agent can identify changes through available method."
+  },
+  {
+    "id": "G10",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search after new version",
+    "expected_result": "Current version is discoverable."
+  },
+  {
+    "id": "G11",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Check links to previous versions",
+    "expected_result": "Version-specific links retain intended targets."
+  },
+  {
+    "id": "G12",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Create a third version",
+    "expected_result": "History remains intact across multiple changes."
+  },
+  {
+    "id": "G13",
+    "category": "Improving knowledge & versioning",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Validate versioning permissions",
+    "expected_result": "Unauthorized agents cannot create/change versions."
+  },
+  {
+    "id": "H01",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Create all-team article",
+    "expected_result": "Every intended agent team can read it."
+  },
+  {
+    "id": "H02",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Create own-team-only article",
+    "expected_result": "Members of designated team can access it."
+  },
+  {
+    "id": "H03",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "View team article as another team",
+    "expected_result": "Unauthorized team cannot access it."
+  },
+  {
+    "id": "H04",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Search for other team's restricted article",
+    "expected_result": "Restricted article does not appear."
+  },
+  {
+    "id": "H05",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Open restricted article with direct URL",
+    "expected_result": "Unauthorized agent cannot retrieve content."
+  },
+  {
+    "id": "H06",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Open restricted article from a ticket",
+    "expected_result": "Ticket access does not bypass KB permissions."
+  },
+  {
+    "id": "H07",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Open restricted article via related articles",
+    "expected_result": "Relationship does not bypass permissions."
+  },
+  {
+    "id": "H08",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Open restricted article via shared link",
+    "expected_result": "Access denied per intended rules."
+  },
+  {
+    "id": "H09",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Test agent with multiple team memberships",
+    "expected_result": "Combined permitted access behaves as intended."
+  },
+  {
+    "id": "H10",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Test read-only access",
+    "expected_result": "Agent reads allowed articles but cannot modify them."
+  },
+  {
+    "id": "H11",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Test article modification rights",
+    "expected_result": "Only authorized agents can modify or version."
+  },
+  {
+    "id": "H12",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Attempt modification of restricted article",
+    "expected_result": "Unauthorized changes are prevented."
+  },
+  {
+    "id": "H13",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Attempt to delete article",
+    "expected_result": "Delete action follows assigned permissions."
+  },
+  {
+    "id": "H14",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Restrict an existing shared article",
+    "expected_result": "Previously authorized users lose access as intended."
+  },
+  {
+    "id": "H15",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Expand access to more teams",
+    "expected_result": "Newly authorized teams gain access."
+  },
+  {
+    "id": "H16",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Test FAQ-list access restrictions",
+    "expected_result": "Lists/articles respect configured agent permissions."
+  },
+  {
+    "id": "H17",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Test article in multiple FAQ lists",
+    "expected_result": "Multiple memberships do not unintentionally expand access."
+  },
+  {
+    "id": "H18",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Open old version of restricted article",
+    "expected_result": "History does not leak protected content."
+  },
+  {
+    "id": "H19",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Search internal-only knowledge from ticket",
+    "expected_result": "Search suggestions respect permissions."
+  },
+  {
+    "id": "H20",
+    "category": "Team knowledge & access restrictions",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Switch between team test accounts",
+    "expected_result": "Results are specific to authenticated identity."
+  },
+  {
+    "id": "I01",
+    "category": "Cross-team collaboration",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Team A creates shared article",
+    "expected_result": "Team B can discover and read it."
+  },
+  {
+    "id": "I02",
+    "category": "Cross-team collaboration",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Team B reuses Team A's article",
+    "expected_result": "Article can support another team's ticket."
+  },
+  {
+    "id": "I03",
+    "category": "Cross-team collaboration",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Team B links shared article to its ticket",
+    "expected_result": "Cross-team reuse is recorded."
+  },
+  {
+    "id": "I04",
+    "category": "Cross-team collaboration",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Team B identifies improvement",
+    "expected_result": "Agent can follow configured improvement process."
+  },
+  {
+    "id": "I05",
+    "category": "Cross-team collaboration",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Team B creates new version",
+    "expected_result": "Permitted cross-team improvements work."
+  },
+  {
+    "id": "I06",
+    "category": "Cross-team collaboration",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Team A reviews Team B's version",
+    "expected_result": "Original team can see updated knowledge."
+  },
+  {
+    "id": "I07",
+    "category": "Cross-team collaboration",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Team A creates restricted knowledge",
+    "expected_result": "Team B cannot access it."
+  },
+  {
+    "id": "I08",
+    "category": "Cross-team collaboration",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Share article with specific team",
+    "expected_result": "Intended team has access; others do not."
+  },
+  {
+    "id": "I09",
+    "category": "Cross-team collaboration",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Create knowledge covering multiple services",
+    "expected_result": "Applicable teams can find and reuse one article."
+  },
+  {
+    "id": "I10",
+    "category": "Cross-team collaboration",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Test collective ownership",
+    "expected_result": "Article remains usable when original author is unavailable."
+  },
+  {
+    "id": "J01",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Search from open ticket",
+    "expected_result": "Agent locates relevant knowledge."
+  },
+  {
+    "id": "J02",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "View suggested knowledge",
+    "expected_result": "Suggestions are relevant where enabled."
+  },
+  {
+    "id": "J03",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Open suggested article",
+    "expected_result": "Article opens in ticket context."
+  },
+  {
+    "id": "J04",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Link article to ticket",
+    "expected_result": "Ticket retains correct article association."
+  },
+  {
+    "id": "J05",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Link through ticket popup",
+    "expected_result": "Documented shortcut works."
+  },
+  {
+    "id": "J06",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "View article linked on ticket",
+    "expected_result": "Article remains identifiable after ticket reopen."
+  },
+  {
+    "id": "J07",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Link multiple articles to ticket",
+    "expected_result": "All associations persist."
+  },
+  {
+    "id": "J08",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Reuse one article across multiple tickets",
+    "expected_result": "Each ticket can reference article."
+  },
+  {
+    "id": "J09",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Link correct article version",
+    "expected_result": "Association targets intended version."
+  },
+  {
+    "id": "J10",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Correct incorrect association",
+    "expected_result": "Agent can remove/replace links where authorized."
+  },
+  {
+    "id": "J11",
+    "category": "Ticket association & reuse",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Resolve ticket using existing knowledge",
+    "expected_result": "Resolution completes and association persists."
+  },
+  {
+    "id": "K01",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Locate article sharing function",
+    "expected_result": "Agent can easily find Share."
+  },
+  {
+    "id": "K02",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Copy agent-facing article link",
+    "expected_result": "Agent URL generates correctly."
+  },
+  {
+    "id": "K03",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Copy end-user article link",
+    "expected_result": "User portal URL generates correctly."
+  },
+  {
+    "id": "K04",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Open shared agent link",
+    "expected_result": "Authorized agent accesses correct article."
+  },
+  {
+    "id": "K05",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Open shared end-user link",
+    "expected_result": "Authorized user sees appropriate content."
+  },
+  {
+    "id": "K06",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Share latest-version link",
+    "expected_result": "Link opens newest version."
+  },
+  {
+    "id": "K07",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Share specific older version",
+    "expected_result": "Link opens intended historical version subject to access."
+  },
+  {
+    "id": "K08",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Share restricted article with unauthorized recipient",
+    "expected_result": "Recipient cannot retrieve protected content."
+  },
+  {
+    "id": "K09",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Use Send with Next Action",
+    "expected_result": "Link inserts in next ticket action."
+  },
+  {
+    "id": "K10",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Complete next action",
+    "expected_result": "Message includes intended link and records correctly."
+  },
+  {
+    "id": "K11",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Recipient opens link from ticket communication",
+    "expected_result": "Correct content opens without internal-only details."
+  },
+  {
+    "id": "K12",
+    "category": "Sharing knowledge & next action",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Share article after new version",
+    "expected_result": "Old latest-version link opens current version as intended."
+  },
+  {
+    "id": "L01",
+    "category": "Knowledge feedback & ratings",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Give positive article feedback",
+    "expected_result": "Vote saves and updates appropriately."
+  },
+  {
+    "id": "L02",
+    "category": "Knowledge feedback & ratings",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Give negative article feedback",
+    "expected_result": "Vote saves correctly."
+  },
+  {
+    "id": "L03",
+    "category": "Knowledge feedback & ratings",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Leave written feedback",
+    "expected_result": "Comments capture where enabled."
+  },
+  {
+    "id": "L04",
+    "category": "Knowledge feedback & ratings",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Review submitted feedback",
+    "expected_result": "Authorized agent can locate feedback."
+  },
+  {
+    "id": "L05",
+    "category": "Knowledge feedback & ratings",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Rate another agent's article",
+    "expected_result": "Voting works as configured."
+  },
+  {
+    "id": "L06",
+    "category": "Knowledge feedback & ratings",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Author attempts to rate own edited article",
+    "expected_result": "Restriction behaves as documented/configured."
+  },
+  {
+    "id": "L07",
+    "category": "Knowledge feedback & ratings",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Submit feedback as end user",
+    "expected_result": "Portal feedback records when enabled."
+  },
+  {
+    "id": "L08",
+    "category": "Knowledge feedback & ratings",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Submit negative feedback requiring action",
+    "expected_result": "Configured feedback ticket/follow-up works."
+  },
+  {
+    "id": "L09",
+    "category": "Knowledge feedback & ratings",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Improve article following feedback",
+    "expected_result": "Update can be completed and traced."
+  },
+  {
+    "id": "M01",
+    "category": "French translation & bilingual knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Locate Add Translations control",
+    "expected_result": "Agent can find translation feature."
+  },
+  {
+    "id": "M02",
+    "category": "French translation & bilingual knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Add French title",
+    "expected_result": "French title saves."
+  },
+  {
+    "id": "M03",
+    "category": "French translation & bilingual knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Add French description",
+    "expected_result": "French description saves."
+  },
+  {
+    "id": "M04",
+    "category": "French translation & bilingual knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Add French resolution",
+    "expected_result": "French content saves with intended formatting."
+  },
+  {
+    "id": "M05",
+    "category": "French translation & bilingual knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Reopen French translation",
+    "expected_result": "Translation persists after saving."
+  },
+  {
+    "id": "M06",
+    "category": "French translation & bilingual knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "View article in French",
+    "expected_result": "Language setting shows French translation."
+  },
+  {
+    "id": "M07",
+    "category": "French translation & bilingual knowledge",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "View article in English",
+    "expected_result": "English original remains correct."
+  },
+  {
+    "id": "M08",
+    "category": "French translation & bilingual knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Search translated article in French",
+    "expected_result": "French discovery behaves as configured."
+  },
+  {
+    "id": "M09",
+    "category": "French translation & bilingual knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Share translated article",
+    "expected_result": "Authorized recipient sees intended language."
+  },
+  {
+    "id": "M10",
+    "category": "French translation & bilingual knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Create new version of translated article",
+    "expected_result": "Versioning/translation relationship preserved and update needs clear."
+  },
+  {
+    "id": "N01",
+    "category": "PDF generation & export",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Locate Generate PDF",
+    "expected_result": "Function accessible to intended users."
+  },
+  {
+    "id": "N02",
+    "category": "PDF generation & export",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Generate PDF of article",
+    "expected_result": "Valid PDF generated."
+  },
+  {
+    "id": "N03",
+    "category": "PDF generation & export",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Validate PDF content",
+    "expected_result": "Title, description, resolution, expected metadata appear."
+  },
+  {
+    "id": "N04",
+    "category": "PDF generation & export",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Validate PDF formatting",
+    "expected_result": "Images, tables, lists, links are usable."
+  },
+  {
+    "id": "N05",
+    "category": "PDF generation & export",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Generate PDF of updated article",
+    "expected_result": "Output uses intended version."
+  },
+  {
+    "id": "N06",
+    "category": "PDF generation & export",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Generate PDF of older version",
+    "expected_result": "Operation follows approved configuration."
+  },
+  {
+    "id": "N07",
+    "category": "PDF generation & export",
+    "tier": "Core",
+    "priority": "P1 · Core",
+    "title": "Generate French article PDF",
+    "expected_result": "Language and accents render correctly."
+  },
+  {
+    "id": "N08",
+    "category": "PDF generation & export",
+    "tier": "Core",
+    "priority": "P0 · Critical",
+    "title": "Test restricted content in PDF",
+    "expected_result": "Public-facing output excludes internal/restricted details."
+  },
+  {
+    "id": "O01",
+    "category": "FAQ lists & related knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Browse FAQ lists",
+    "expected_result": "Available lists display correctly."
+  },
+  {
+    "id": "O02",
+    "category": "FAQ lists & related knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Create article in FAQ list",
+    "expected_result": "Article appears in intended category."
+  },
+  {
+    "id": "O03",
+    "category": "FAQ lists & related knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Assign article to multiple FAQ lists",
+    "expected_result": "Article displays wherever authorized."
+  },
+  {
+    "id": "O04",
+    "category": "FAQ lists & related knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Change primary FAQ list",
+    "expected_result": "Primary assignment persists."
+  },
+  {
+    "id": "O05",
+    "category": "FAQ lists & related knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Change article FAQ membership",
+    "expected_result": "Browsing/access update appropriately."
+  },
+  {
+    "id": "O06",
+    "category": "FAQ lists & related knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Add related article",
+    "expected_result": "Relationship saves and displays."
+  },
+  {
+    "id": "O07",
+    "category": "FAQ lists & related knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Open related article",
+    "expected_result": "Link resolves to intended article."
+  },
+  {
+    "id": "O08",
+    "category": "FAQ lists & related knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Relate restricted article",
+    "expected_result": "Unauthorized users cannot retrieve related restricted content."
+  },
+  {
+    "id": "O09",
+    "category": "FAQ lists & related knowledge",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Review duplicate or overlapping articles",
+    "expected_result": "Agent can identify and follow consolidation process."
+  },
+  {
+    "id": "P01",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Set next review date",
+    "expected_result": "Date saves and displays correctly."
+  },
+  {
+    "id": "P02",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Find articles due for review",
+    "expected_result": "Review filters work when enabled."
+  },
+  {
+    "id": "P03",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Mark article reviewed",
+    "expected_result": "Review action and next date update as configured."
+  },
+  {
+    "id": "P04",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Create version during review",
+    "expected_result": "Content retained and review state handled."
+  },
+  {
+    "id": "P05",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Deactivate article",
+    "expected_result": "Article leaves ordinary search/lists per configuration."
+  },
+  {
+    "id": "P06",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Open inactive article via existing link",
+    "expected_result": "Access follows inactive-article policy."
+  },
+  {
+    "id": "P07",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Reactivate article",
+    "expected_result": "Intended audiences regain access."
+  },
+  {
+    "id": "P08",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Assign article owner",
+    "expected_result": "Owner records correctly."
+  },
+  {
+    "id": "P09",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Assign team ownership",
+    "expected_result": "Owner team recorded correctly."
+  },
+  {
+    "id": "P10",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Transfer ownership",
+    "expected_result": "Authorized transfers work."
+  },
+  {
+    "id": "P11",
+    "category": "Lifecycle, review & ownership",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Delete or retire test knowledge",
+    "expected_result": "Action does not unintentionally affect linked tickets/articles."
+  },
+  {
+    "id": "Q01",
+    "category": "Content integrity & error handling",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Two agents open same article",
+    "expected_result": "Both see expected content and editing state."
+  },
+  {
+    "id": "Q02",
+    "category": "Content integrity & error handling",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Two agents attempt simultaneous changes",
+    "expected_result": "Configured collision warning appears where enabled."
+  },
+  {
+    "id": "Q03",
+    "category": "Content integrity & error handling",
+    "tier": "Admin / Extended",
+    "priority": "P0 · Critical",
+    "title": "Save after another agent's changes",
+    "expected_result": "No silent overwrite or content loss."
+  },
+  {
+    "id": "Q04",
+    "category": "Content integrity & error handling",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Attempt to create duplicate article",
+    "expected_result": "Agent can find existing knowledge and avoid duplication."
+  },
+  {
+    "id": "Q05",
+    "category": "Content integrity & error handling",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Use invalid or empty mandatory values",
+    "expected_result": "Clear validation prevents invalid entry."
+  },
+  {
+    "id": "Q06",
+    "category": "Content integrity & error handling",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Upload unsupported/oversized file",
+    "expected_result": "Failure handled cleanly."
+  },
+  {
+    "id": "Q07",
+    "category": "Content integrity & error handling",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Navigate away with unsaved changes",
+    "expected_result": "Appropriate warning or recovery is provided."
+  },
+  {
+    "id": "Q08",
+    "category": "Content integrity & error handling",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Session expiry while authoring",
+    "expected_result": "Clear message and appropriate recovery."
+  },
+  {
+    "id": "Q09",
+    "category": "Content integrity & error handling",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Test broken links/missing attachments",
+    "expected_result": "Failure understandable and recoverable."
+  },
+  {
+    "id": "Q10",
+    "category": "Content integrity & error handling",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Create version following failed save",
+    "expected_result": "History and original remain intact."
+  },
+  {
+    "id": "R01",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Access KB as authorized end user",
+    "expected_result": "Permitted articles display."
+  },
+  {
+    "id": "R02",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Search public-facing article",
+    "expected_result": "Relevant content discoverable."
+  },
+  {
+    "id": "R03",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P0 · Critical",
+    "title": "Search agent-only knowledge as user",
+    "expected_result": "Internal article not exposed."
+  },
+  {
+    "id": "R04",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P0 · Critical",
+    "title": "Open article with Internal Memo as user",
+    "expected_result": "Internal Memo remains hidden."
+  },
+  {
+    "id": "R05",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Search using student terminology",
+    "expected_result": "Student finds applicable guidance."
+  },
+  {
+    "id": "R06",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Search using faculty/staff terminology",
+    "expected_result": "Relevant staff guidance discoverable."
+  },
+  {
+    "id": "R07",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Navigate article using keyboard",
+    "expected_result": "Controls and content keyboard accessible."
+  },
+  {
+    "id": "R08",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Assess headings and link text",
+    "expected_result": "Structure meaningful to assistive technology."
+  },
+  {
+    "id": "R09",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Use KB at mobile viewport",
+    "expected_result": "Search/navigation/readability usable."
+  },
+  {
+    "id": "R10",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "View article in French",
+    "expected_result": "Language presentation/text render correctly."
+  },
+  {
+    "id": "R11",
+    "category": "End-user portal & accessibility",
+    "tier": "Extended",
+    "priority": "P2 · Extended",
+    "title": "Submit portal feedback",
+    "expected_result": "Feedback experience understandable and functional."
+  },
+  {
+    "id": "S01",
+    "category": "Reporting, usage & traceability",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "View article usage counts",
+    "expected_result": "Views record as configured."
+  },
+  {
+    "id": "S02",
+    "category": "Reporting, usage & traceability",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Distinguish agent and user views",
+    "expected_result": "Counters match intended definition."
+  },
+  {
+    "id": "S03",
+    "category": "Reporting, usage & traceability",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Review votes and feedback",
+    "expected_result": "Usage info available to authorized roles."
+  },
+  {
+    "id": "S04",
+    "category": "Reporting, usage & traceability",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "View creation and modification history",
+    "expected_result": "Relevant changes/authorship traceable."
+  },
+  {
+    "id": "S05",
+    "category": "Reporting, usage & traceability",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Report on article/ticket relationships",
+    "expected_result": "Associations and reuse measurable."
+  },
+  {
+    "id": "S06",
+    "category": "Reporting, usage & traceability",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Identify due-for-review articles",
+    "expected_result": "Reporting supplies reliable review data."
+  },
+  {
+    "id": "S07",
+    "category": "Reporting, usage & traceability",
+    "tier": "Admin / Extended",
+    "priority": "P0 · Critical",
+    "title": "Report on restricted articles",
+    "expected_result": "Results respect reporting-user permissions."
+  },
+  {
+    "id": "S08",
+    "category": "Reporting, usage & traceability",
+    "tier": "Admin / Extended",
+    "priority": "P2 · Extended",
+    "title": "Analyze search and knowledge gaps",
+    "expected_result": "Analytics support gap identification."
+  }
+]

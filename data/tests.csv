@@ -1,0 +1,216 @@
+﻿ID,Category,Tier,Priority,Test,Expected
+A01,"Authentication, access & navigation",Core,P0 · Critical,Sign in to Halo,Agent authenticates using normal credentials.
+A02,"Authentication, access & navigation",Core,P1 · Core,Confirm correct agent identity,"Name, team membership, and assigned role are correct."
+A03,"Authentication, access & navigation",Core,P0 · Critical,Access Knowledge Base,KB module is accessible from expected navigation.
+A04,"Authentication, access & navigation",Core,P1 · Core,Open KB landing page,Page loads without errors; available sections display.
+A05,"Authentication, access & navigation",Core,P0 · Critical,Access article list,Agent can browse articles they are authorized to see.
+A06,"Authentication, access & navigation",Core,P1 · Core,Access KB from a ticket,Agent can reach KB functions from the ticket workflow.
+A07,"Authentication, access & navigation",Core,P1 · Core,Open existing article,Article loads with expected content and actions.
+A08,"Authentication, access & navigation",Core,P1 · Core,Navigate between views,"Switching between ticket, article, search, and KB does not lose work."
+A09,"Authentication, access & navigation",Core,P1 · Core,Check agent permissions,"Create, edit, version, and delete actions match the role."
+A10,"Authentication, access & navigation",Core,P1 · Core,Verify access after a new session,Access remains consistent after signing out and in.
+B01,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search exact article title,Correct article appears in search results.
+B02,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search partial title,Relevant article remains discoverable.
+B03,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search using ticket symptoms,Agent can find knowledge using natural descriptions of the issue.
+B04,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search using common terminology,Articles appear for terminology familiar to frontline agents.
+B05,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search using alternative terminology,"Synonyms, acronyms, and institutional terms behave as configured."
+B06,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search using article tags,Relevant tagged articles appear.
+B07,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search using metadata keywords,Configured metadata is indexed and discoverable.
+B08,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search for words in description,Matching descriptions are searchable.
+B09,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search for text in resolution,Resolution indexing matches configured full-text search.
+B10,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search using multiple keywords,Results are appropriately filtered or ranked.
+B11,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search for nonexistent content,Clear no-results state appears.
+B12,"Knowledge discovery, searching & filtering",Core,P0 · Critical,Search for restricted article,Unauthorized article is not returned.
+B13,"Knowledge discovery, searching & filtering",Core,P1 · Core,Filter results by FAQ list,Only matching articles appear.
+B14,"Knowledge discovery, searching & filtering",Core,P1 · Core,Sort search results,Available sort options produce understandable results.
+B15,"Knowledge discovery, searching & filtering",Core,P1 · Core,Search from different entry points,"Main KB, ticket, and enabled entry points return appropriate results."
+C01,Reading & assessing knowledge,Core,P1 · Core,Read existing article,"Title, description, and resolution display correctly."
+C02,Reading & assessing knowledge,Core,P1 · Core,Assess relevance,Agent can determine whether article addresses the ticket.
+C03,Reading & assessing knowledge,Core,P1 · Core,Follow troubleshooting instructions,Agent can perform documented procedure successfully.
+C04,Reading & assessing knowledge,Core,P1 · Core,Review article metadata,"Relevant tags, dates, and classification details are accessible."
+C05,Reading & assessing knowledge,Core,P1 · Core,Identify article version,Agent can distinguish current from historical content.
+C06,Reading & assessing knowledge,Core,P1 · Core,View related knowledge,Related article links display and work.
+C07,Reading & assessing knowledge,Core,P1 · Core,View attachments and images,Supported images and attachments open correctly.
+C08,Reading & assessing knowledge,Core,P1 · Core,Read Internal Memo,Authorized agent can read agent-only instructions.
+C09,Reading & assessing knowledge,Core,P1 · Core,Identify missing or inaccurate knowledge,"Agent knows whether to reuse, version, or create knowledge."
+D01,Creating knowledge directly in KB,Core,P1 · Core,Locate New Article action,Agent finds creation control without assistance.
+D02,Creating knowledge directly in KB,Core,P1 · Core,Create an article,Article saves successfully.
+D03,Creating knowledge directly in KB,Core,P1 · Core,Enter descriptive title,Title persists and displays correctly.
+D04,Creating knowledge directly in KB,Core,P1 · Core,Enter problem description,Description persists in appropriate views.
+D05,Creating knowledge directly in KB,Core,P1 · Core,Enter resolution instructions,Resolution saves with intended formatting.
+D06,Creating knowledge directly in KB,Core,P1 · Core,Add Internal Memo,Internal content stays separate from public content.
+D07,Creating knowledge directly in KB,Core,P1 · Core,Add required tags,Tags store and are searchable.
+D08,Creating knowledge directly in KB,Core,P1 · Core,Add meta keywords,Metadata persists and influences search where configured.
+D09,Creating knowledge directly in KB,Core,P1 · Core,Select correct article type,Article classification saves.
+D10,Creating knowledge directly in KB,Core,P1 · Core,Assign article to FAQ list,Article appears in selected list.
+D11,Creating knowledge directly in KB,Core,P1 · Core,Assign primary FAQ list,Primary classification saves correctly.
+D12,Creating knowledge directly in KB,Core,P1 · Core,Set Active status,Article becomes available in configured views.
+D13,Creating knowledge directly in KB,Core,P1 · Core,Set next review date,Date persists after saving.
+D14,Creating knowledge directly in KB,Core,P0 · Critical,Configure team access,Selected team permissions are retained.
+D15,Creating knowledge directly in KB,Core,P0 · Critical,Configure end-user access,User visibility follows selected restrictions.
+D16,Creating knowledge directly in KB,Core,P0 · Critical,Reopen saved article,All fields and content remain intact.
+D17,Creating knowledge directly in KB,Core,P1 · Core,Find newly created article,Article is searchable within agreed indexing interval.
+E01,Article editor & attachments,Extended,P2 · Extended,Apply headings and paragraphs,Saved formatting remains readable.
+E02,Article editor & attachments,Extended,P2 · Extended,Add numbered instructions,Steps retain sequence and indentation.
+E03,Article editor & attachments,Extended,P2 · Extended,Add hyperlinks,Internal and external links open correctly.
+E04,Article editor & attachments,Extended,P2 · Extended,Add screenshots,Images display at appropriate size.
+E05,Article editor & attachments,Extended,P2 · Extended,Upload attachments,Files save and authorized readers can retrieve them.
+E06,Article editor & attachments,Extended,P2 · Extended,Add tables,Tables display correctly in saved articles.
+E07,Article editor & attachments,Extended,P2 · Extended,Paste formatted text,Pasted content does not disrupt layout.
+E08,Article editor & attachments,Extended,P2 · Extended,Enter special characters,"Accents, apostrophes, symbols, and technical characters persist."
+E09,Article editor & attachments,Extended,P2 · Extended,Create article using a template,Template populates intended fields when enabled.
+E10,Article editor & attachments,Extended,P2 · Extended,Clone an existing article,Distinct article created without overwriting original.
+E11,Article editor & attachments,Extended,P2 · Extended,Attempt save with required fields missing,Validation prevents invalid submission.
+E12,Article editor & attachments,Extended,P2 · Extended,Cancel article creation,No unintended article is created or modified.
+F01,Creating knowledge from tickets,Core,P1 · Core,Open assigned ticket,Agent accesses necessary ticket information.
+F02,Creating knowledge from tickets,Core,P1 · Core,Search for knowledge from ticket,Search works within ticket workflow.
+F03,Creating knowledge from tickets,Core,P1 · Core,Confirm no existing solution,Agent reasonably determines knowledge is missing.
+F04,Creating knowledge from tickets,Core,P1 · Core,Initiate creation from ticket,Configured article-creation function is available.
+F05,Creating knowledge from tickets,Core,P1 · Core,Create article using ticket information,Relevant details transfer or are entered efficiently.
+F06,Creating knowledge from tickets,Core,P1 · Core,Remove requester-specific information,Article contains reusable knowledge without personal ticket details.
+F07,Creating knowledge from tickets,Core,P0 · Critical,Save newly created article,Article saves successfully.
+F08,Creating knowledge from tickets,Core,P1 · Core,Verify article-ticket relationship,Created article is associated with ticket if configured.
+F09,Creating knowledge from tickets,Core,P1 · Core,Create article during ticket resolution,Documented resolution-time flow works.
+F10,Creating knowledge from tickets,Core,P0 · Critical,Complete ticket resolution,Ticket closes without losing article or association.
+G01,Improving knowledge & versioning,Core,P1 · Core,Open article for improvement,Agent can access versioning function.
+G02,Improving knowledge & versioning,Core,P0 · Critical,Create a new version,New version is created.
+G03,Improving knowledge & versioning,Core,P1 · Core,Modify resolution instructions,New instructions save in new version.
+G04,Improving knowledge & versioning,Core,P1 · Core,Improve title or description,Change appears in appropriate version.
+G05,Improving knowledge & versioning,Core,P1 · Core,Update article metadata,Fields behave according to configuration.
+G06,Improving knowledge & versioning,Core,P0 · Critical,Verify original version retained,Earlier version remains accessible to authorized agents.
+G07,Improving knowledge & versioning,Core,P1 · Core,Identify latest version,Current version can be reliably located.
+G08,Improving knowledge & versioning,Core,P1 · Core,Open previous versions,Historical versions remain accessible to authorized readers.
+G09,Improving knowledge & versioning,Core,P1 · Core,Compare old and new content,Agent can identify changes through available method.
+G10,Improving knowledge & versioning,Core,P1 · Core,Search after new version,Current version is discoverable.
+G11,Improving knowledge & versioning,Core,P1 · Core,Check links to previous versions,Version-specific links retain intended targets.
+G12,Improving knowledge & versioning,Core,P1 · Core,Create a third version,History remains intact across multiple changes.
+G13,Improving knowledge & versioning,Core,P1 · Core,Validate versioning permissions,Unauthorized agents cannot create/change versions.
+H01,Team knowledge & access restrictions,Core,P1 · Core,Create all-team article,Every intended agent team can read it.
+H02,Team knowledge & access restrictions,Core,P1 · Core,Create own-team-only article,Members of designated team can access it.
+H03,Team knowledge & access restrictions,Core,P0 · Critical,View team article as another team,Unauthorized team cannot access it.
+H04,Team knowledge & access restrictions,Core,P0 · Critical,Search for other team's restricted article,Restricted article does not appear.
+H05,Team knowledge & access restrictions,Core,P0 · Critical,Open restricted article with direct URL,Unauthorized agent cannot retrieve content.
+H06,Team knowledge & access restrictions,Core,P0 · Critical,Open restricted article from a ticket,Ticket access does not bypass KB permissions.
+H07,Team knowledge & access restrictions,Core,P0 · Critical,Open restricted article via related articles,Relationship does not bypass permissions.
+H08,Team knowledge & access restrictions,Core,P0 · Critical,Open restricted article via shared link,Access denied per intended rules.
+H09,Team knowledge & access restrictions,Core,P1 · Core,Test agent with multiple team memberships,Combined permitted access behaves as intended.
+H10,Team knowledge & access restrictions,Core,P1 · Core,Test read-only access,Agent reads allowed articles but cannot modify them.
+H11,Team knowledge & access restrictions,Core,P1 · Core,Test article modification rights,Only authorized agents can modify or version.
+H12,Team knowledge & access restrictions,Core,P0 · Critical,Attempt modification of restricted article,Unauthorized changes are prevented.
+H13,Team knowledge & access restrictions,Core,P1 · Core,Attempt to delete article,Delete action follows assigned permissions.
+H14,Team knowledge & access restrictions,Core,P1 · Core,Restrict an existing shared article,Previously authorized users lose access as intended.
+H15,Team knowledge & access restrictions,Core,P1 · Core,Expand access to more teams,Newly authorized teams gain access.
+H16,Team knowledge & access restrictions,Core,P1 · Core,Test FAQ-list access restrictions,Lists/articles respect configured agent permissions.
+H17,Team knowledge & access restrictions,Core,P0 · Critical,Test article in multiple FAQ lists,Multiple memberships do not unintentionally expand access.
+H18,Team knowledge & access restrictions,Core,P0 · Critical,Open old version of restricted article,History does not leak protected content.
+H19,Team knowledge & access restrictions,Core,P0 · Critical,Search internal-only knowledge from ticket,Search suggestions respect permissions.
+H20,Team knowledge & access restrictions,Core,P0 · Critical,Switch between team test accounts,Results are specific to authenticated identity.
+I01,Cross-team collaboration,Core,P1 · Core,Team A creates shared article,Team B can discover and read it.
+I02,Cross-team collaboration,Core,P1 · Core,Team B reuses Team A's article,Article can support another team's ticket.
+I03,Cross-team collaboration,Core,P1 · Core,Team B links shared article to its ticket,Cross-team reuse is recorded.
+I04,Cross-team collaboration,Core,P1 · Core,Team B identifies improvement,Agent can follow configured improvement process.
+I05,Cross-team collaboration,Core,P1 · Core,Team B creates new version,Permitted cross-team improvements work.
+I06,Cross-team collaboration,Core,P1 · Core,Team A reviews Team B's version,Original team can see updated knowledge.
+I07,Cross-team collaboration,Core,P0 · Critical,Team A creates restricted knowledge,Team B cannot access it.
+I08,Cross-team collaboration,Core,P1 · Core,Share article with specific team,Intended team has access; others do not.
+I09,Cross-team collaboration,Core,P1 · Core,Create knowledge covering multiple services,Applicable teams can find and reuse one article.
+I10,Cross-team collaboration,Core,P1 · Core,Test collective ownership,Article remains usable when original author is unavailable.
+J01,Ticket association & reuse,Core,P1 · Core,Search from open ticket,Agent locates relevant knowledge.
+J02,Ticket association & reuse,Core,P1 · Core,View suggested knowledge,Suggestions are relevant where enabled.
+J03,Ticket association & reuse,Core,P1 · Core,Open suggested article,Article opens in ticket context.
+J04,Ticket association & reuse,Core,P0 · Critical,Link article to ticket,Ticket retains correct article association.
+J05,Ticket association & reuse,Core,P1 · Core,Link through ticket popup,Documented shortcut works.
+J06,Ticket association & reuse,Core,P0 · Critical,View article linked on ticket,Article remains identifiable after ticket reopen.
+J07,Ticket association & reuse,Core,P1 · Core,Link multiple articles to ticket,All associations persist.
+J08,Ticket association & reuse,Core,P1 · Core,Reuse one article across multiple tickets,Each ticket can reference article.
+J09,Ticket association & reuse,Core,P1 · Core,Link correct article version,Association targets intended version.
+J10,Ticket association & reuse,Core,P1 · Core,Correct incorrect association,Agent can remove/replace links where authorized.
+J11,Ticket association & reuse,Core,P1 · Core,Resolve ticket using existing knowledge,Resolution completes and association persists.
+K01,Sharing knowledge & next action,Core,P1 · Core,Locate article sharing function,Agent can easily find Share.
+K02,Sharing knowledge & next action,Core,P1 · Core,Copy agent-facing article link,Agent URL generates correctly.
+K03,Sharing knowledge & next action,Core,P1 · Core,Copy end-user article link,User portal URL generates correctly.
+K04,Sharing knowledge & next action,Core,P1 · Core,Open shared agent link,Authorized agent accesses correct article.
+K05,Sharing knowledge & next action,Core,P1 · Core,Open shared end-user link,Authorized user sees appropriate content.
+K06,Sharing knowledge & next action,Core,P1 · Core,Share latest-version link,Link opens newest version.
+K07,Sharing knowledge & next action,Core,P1 · Core,Share specific older version,Link opens intended historical version subject to access.
+K08,Sharing knowledge & next action,Core,P0 · Critical,Share restricted article with unauthorized recipient,Recipient cannot retrieve protected content.
+K09,Sharing knowledge & next action,Core,P1 · Core,Use Send with Next Action,Link inserts in next ticket action.
+K10,Sharing knowledge & next action,Core,P1 · Core,Complete next action,Message includes intended link and records correctly.
+K11,Sharing knowledge & next action,Core,P0 · Critical,Recipient opens link from ticket communication,Correct content opens without internal-only details.
+K12,Sharing knowledge & next action,Core,P1 · Core,Share article after new version,Old latest-version link opens current version as intended.
+L01,Knowledge feedback & ratings,Core,P1 · Core,Give positive article feedback,Vote saves and updates appropriately.
+L02,Knowledge feedback & ratings,Core,P1 · Core,Give negative article feedback,Vote saves correctly.
+L03,Knowledge feedback & ratings,Core,P1 · Core,Leave written feedback,Comments capture where enabled.
+L04,Knowledge feedback & ratings,Core,P1 · Core,Review submitted feedback,Authorized agent can locate feedback.
+L05,Knowledge feedback & ratings,Core,P1 · Core,Rate another agent's article,Voting works as configured.
+L06,Knowledge feedback & ratings,Core,P1 · Core,Author attempts to rate own edited article,Restriction behaves as documented/configured.
+L07,Knowledge feedback & ratings,Core,P1 · Core,Submit feedback as end user,Portal feedback records when enabled.
+L08,Knowledge feedback & ratings,Core,P1 · Core,Submit negative feedback requiring action,Configured feedback ticket/follow-up works.
+L09,Knowledge feedback & ratings,Core,P1 · Core,Improve article following feedback,Update can be completed and traced.
+M01,French translation & bilingual knowledge,Core,P1 · Core,Locate Add Translations control,Agent can find translation feature.
+M02,French translation & bilingual knowledge,Core,P1 · Core,Add French title,French title saves.
+M03,French translation & bilingual knowledge,Core,P1 · Core,Add French description,French description saves.
+M04,French translation & bilingual knowledge,Core,P1 · Core,Add French resolution,French content saves with intended formatting.
+M05,French translation & bilingual knowledge,Core,P1 · Core,Reopen French translation,Translation persists after saving.
+M06,French translation & bilingual knowledge,Core,P1 · Core,View article in French,Language setting shows French translation.
+M07,French translation & bilingual knowledge,Core,P1 · Core,View article in English,English original remains correct.
+M08,French translation & bilingual knowledge,Extended,P2 · Extended,Search translated article in French,French discovery behaves as configured.
+M09,French translation & bilingual knowledge,Extended,P2 · Extended,Share translated article,Authorized recipient sees intended language.
+M10,French translation & bilingual knowledge,Extended,P2 · Extended,Create new version of translated article,Versioning/translation relationship preserved and update needs clear.
+N01,PDF generation & export,Core,P1 · Core,Locate Generate PDF,Function accessible to intended users.
+N02,PDF generation & export,Core,P1 · Core,Generate PDF of article,Valid PDF generated.
+N03,PDF generation & export,Core,P1 · Core,Validate PDF content,"Title, description, resolution, expected metadata appear."
+N04,PDF generation & export,Core,P1 · Core,Validate PDF formatting,"Images, tables, lists, links are usable."
+N05,PDF generation & export,Core,P1 · Core,Generate PDF of updated article,Output uses intended version.
+N06,PDF generation & export,Core,P1 · Core,Generate PDF of older version,Operation follows approved configuration.
+N07,PDF generation & export,Core,P1 · Core,Generate French article PDF,Language and accents render correctly.
+N08,PDF generation & export,Core,P0 · Critical,Test restricted content in PDF,Public-facing output excludes internal/restricted details.
+O01,FAQ lists & related knowledge,Extended,P2 · Extended,Browse FAQ lists,Available lists display correctly.
+O02,FAQ lists & related knowledge,Extended,P2 · Extended,Create article in FAQ list,Article appears in intended category.
+O03,FAQ lists & related knowledge,Extended,P2 · Extended,Assign article to multiple FAQ lists,Article displays wherever authorized.
+O04,FAQ lists & related knowledge,Extended,P2 · Extended,Change primary FAQ list,Primary assignment persists.
+O05,FAQ lists & related knowledge,Extended,P2 · Extended,Change article FAQ membership,Browsing/access update appropriately.
+O06,FAQ lists & related knowledge,Extended,P2 · Extended,Add related article,Relationship saves and displays.
+O07,FAQ lists & related knowledge,Extended,P2 · Extended,Open related article,Link resolves to intended article.
+O08,FAQ lists & related knowledge,Extended,P2 · Extended,Relate restricted article,Unauthorized users cannot retrieve related restricted content.
+O09,FAQ lists & related knowledge,Extended,P2 · Extended,Review duplicate or overlapping articles,Agent can identify and follow consolidation process.
+P01,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Set next review date,Date saves and displays correctly.
+P02,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Find articles due for review,Review filters work when enabled.
+P03,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Mark article reviewed,Review action and next date update as configured.
+P04,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Create version during review,Content retained and review state handled.
+P05,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Deactivate article,Article leaves ordinary search/lists per configuration.
+P06,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Open inactive article via existing link,Access follows inactive-article policy.
+P07,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Reactivate article,Intended audiences regain access.
+P08,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Assign article owner,Owner records correctly.
+P09,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Assign team ownership,Owner team recorded correctly.
+P10,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Transfer ownership,Authorized transfers work.
+P11,"Lifecycle, review & ownership",Admin / Extended,P2 · Extended,Delete or retire test knowledge,Action does not unintentionally affect linked tickets/articles.
+Q01,Content integrity & error handling,Admin / Extended,P2 · Extended,Two agents open same article,Both see expected content and editing state.
+Q02,Content integrity & error handling,Admin / Extended,P2 · Extended,Two agents attempt simultaneous changes,Configured collision warning appears where enabled.
+Q03,Content integrity & error handling,Admin / Extended,P0 · Critical,Save after another agent's changes,No silent overwrite or content loss.
+Q04,Content integrity & error handling,Admin / Extended,P2 · Extended,Attempt to create duplicate article,Agent can find existing knowledge and avoid duplication.
+Q05,Content integrity & error handling,Admin / Extended,P2 · Extended,Use invalid or empty mandatory values,Clear validation prevents invalid entry.
+Q06,Content integrity & error handling,Admin / Extended,P2 · Extended,Upload unsupported/oversized file,Failure handled cleanly.
+Q07,Content integrity & error handling,Admin / Extended,P2 · Extended,Navigate away with unsaved changes,Appropriate warning or recovery is provided.
+Q08,Content integrity & error handling,Admin / Extended,P2 · Extended,Session expiry while authoring,Clear message and appropriate recovery.
+Q09,Content integrity & error handling,Admin / Extended,P2 · Extended,Test broken links/missing attachments,Failure understandable and recoverable.
+Q10,Content integrity & error handling,Admin / Extended,P2 · Extended,Create version following failed save,History and original remain intact.
+R01,End-user portal & accessibility,Extended,P2 · Extended,Access KB as authorized end user,Permitted articles display.
+R02,End-user portal & accessibility,Extended,P2 · Extended,Search public-facing article,Relevant content discoverable.
+R03,End-user portal & accessibility,Extended,P0 · Critical,Search agent-only knowledge as user,Internal article not exposed.
+R04,End-user portal & accessibility,Extended,P0 · Critical,Open article with Internal Memo as user,Internal Memo remains hidden.
+R05,End-user portal & accessibility,Extended,P2 · Extended,Search using student terminology,Student finds applicable guidance.
+R06,End-user portal & accessibility,Extended,P2 · Extended,Search using faculty/staff terminology,Relevant staff guidance discoverable.
+R07,End-user portal & accessibility,Extended,P2 · Extended,Navigate article using keyboard,Controls and content keyboard accessible.
+R08,End-user portal & accessibility,Extended,P2 · Extended,Assess headings and link text,Structure meaningful to assistive technology.
+R09,End-user portal & accessibility,Extended,P2 · Extended,Use KB at mobile viewport,Search/navigation/readability usable.
+R10,End-user portal & accessibility,Extended,P2 · Extended,View article in French,Language presentation/text render correctly.
+R11,End-user portal & accessibility,Extended,P2 · Extended,Submit portal feedback,Feedback experience understandable and functional.
+S01,"Reporting, usage & traceability",Admin / Extended,P2 · Extended,View article usage counts,Views record as configured.
+S02,"Reporting, usage & traceability",Admin / Extended,P2 · Extended,Distinguish agent and user views,Counters match intended definition.
+S03,"Reporting, usage & traceability",Admin / Extended,P2 · Extended,Review votes and feedback,Usage info available to authorized roles.
+S04,"Reporting, usage & traceability",Admin / Extended,P2 · Extended,View creation and modification history,Relevant changes/authorship traceable.
+S05,"Reporting, usage & traceability",Admin / Extended,P2 · Extended,Report on article/ticket relationships,Associations and reuse measurable.
+S06,"Reporting, usage & traceability",Admin / Extended,P2 · Extended,Identify due-for-review articles,Reporting supplies reliable review data.
+S07,"Reporting, usage & traceability",Admin / Extended,P0 · Critical,Report on restricted articles,Results respect reporting-user permissions.
+S08,"Reporting, usage & traceability",Admin / Extended,P2 · Extended,Analyze search and knowledge gaps,Analytics support gap identification.
