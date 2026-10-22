@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' http://127.0.0.1:8787 http://localhost:8787 https://*.workers.dev; object-src 'none'; base-uri 'none'; form-action 'self'"
+    />
+    <title>Halo UAT · Administration</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./admin.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="brand"><b>KB</b>UAT administration</div>
+      <a href="./index.html">Participant view</a>
+    </header>
+    <div id="message" role="alert"></div>
+    <main>
+      <section id="login" class="narrow card">
+        <div class="kicker">Administration</div>
+        <h1>Results dashboard</h1>
+        <p>
+          The admin key stays in memory until you sign out or close this page.
+        </p>
+        <form id="loginForm">
+          <label for="adminKey">Administrator API key</label
+          ><input
+            id="adminKey"
+            type="password"
+            autocomplete="off"
+            required
+          /><button id="loginButton" class="primary spaced">Sign in</button>
+        </form>
+      </section>
+      <section id="dashboard" hidden>
+        <div class="row between">
+          <div>
+            <div class="kicker">Administration</div>
+            <h1>UAT results</h1>
+          </div>
+          <div class="row">
+            <button id="refresh">Refresh</button
+            ><button id="logout">Sign out</button>
+          </div>
+        </div>
+        <div class="filters card">
+          <div>
+            <label for="session">Session</label
+            ><select id="session">
+              <option value="">All sessions</option>
+            </select>
+          </div>
+          <div>
+            <label for="team">Team</label
+            ><select id="team">
+              <option value="">All teams</option>
+            </select>
+          </div>
+          <div>
+            <label for="status">Outcome</label
+            ><select id="status">
+              <option value="">All outcomes</option>
+              <option value="pass">Pass</option>
+              <option value="partial_pass">Partial pass</option>
+              <option value="fail">Fail</option>
+              <option value="skipped">Skipped</option>
+            </select>
+          </div>
+          <div>
+            <label for="category">Category</label
+            ><input id="category" placeholder="Exact category" />
+          </div>
+          <div>
+            <label for="test">Test ID</label
+            ><input id="test" placeholder="A01" />
+          </div>
+          <div>
+            <label for="priority">Priority</label
+            ><select id="priority">
+              <option value="">All priorities</option>
+              <option>P0 · Critical</option>
+              <option>P1 · Core</option>
+              <option>P2 · Extended</option>
+            </select>
+          </div>
+          <div>
+            <label for="q">Search</label
+            ><input
+              id="q"
+              type="search"
+              placeholder="Tester, test or comment"
+            />
+          </div>
+          <div>
+            <label for="sort">Order</label
+            ><select id="sort">
+              <option value="issues">Issues first</option>
+              <option value="newest">Newest first</option>
+            </select>
+          </div>
+          <button id="apply">Apply filters</button>
+        </div>
+        <p id="reportNote" class="muted"></p>
+        <div id="metrics" class="metrics"></div>
+        <div class="row">
+          <button id="export">Export filtered CSV</button
+          ><button id="exportIssues">Export failed / partial CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Session / Tester</th>
+                <th>Team</th>
+                <th>Test</th>
+                <th>Category / Priority</th>
+                <th>Outcome</th>
+                <th>Comment</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <div class="row between">
+          <button id="prevPage">Previous page</button><span id="pageInfo"></span
+          ><button id="nextPage">Next page</button>
+        </div>
+        <div class="two spaced">
+          <details class="card">
+            <summary>Recurring failures by case / team</summary>
+            <div id="recurring" class="report-list"></div>
+          </details>
+          <details class="card">
+            <summary>Cases with no results</summary>
+            <div id="unexecuted" class="report-list"></div>
+          </details>
+        </div>
+        <details class="card spaced">
+          <summary>Last submission per tester</summary>
+          <div id="lastSubmissions" class="report-list"></div>
+        </details>
+        <section class="card spaced">
+          <h2>Create a testing session</h2>
+          <form id="sessionForm">
+            <label for="sessionTitle">Session name</label
+            ><input id="sessionTitle" maxlength="100" required /><label
+              for="mode"
+              >Assigned cases</label
+            ><select id="mode">
+              <option value="QUICK">Quick Start · 32 cases</option>
+              <option value="CORE">Core · 151 cases</option>
+              <option value="ALL">All · 215 cases</option>
+              <option value="CUSTOM">Custom IDs</option></select
+            ><label for="customIds"
+              >Custom IDs (comma separated; custom mode only)</label
+            ><textarea id="customIds" placeholder="A01,A03,B01"></textarea
+            ><button id="createSession" class="primary spaced">
+              Create session
+            </button>
+          </form>
+          <section id="codePanel" hidden>
+            <h3>Private join code — save it now</h3>
+            <p>
+              Shown once. Share privately with invited testers. A code grants
+              admission; it does not verify identity.
+            </p>
+            <p id="joinCode" class="token"></p>
+            <button id="copyCode">Copy code</button>
+          </section>
+          <h3>Manage sessions</h3>
+          <div id="sessions"></div>
+        </section>
+      </section>
+      <p class="warning spaced">
+        Use fabricated scenarios only. D1 does not guarantee Canadian data
+        residency. Obtain institutional approval before storing institutional
+        data.
+      </p>
+    </main>
+  </body>
+</html>
