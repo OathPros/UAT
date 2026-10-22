@@ -24,8 +24,11 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   fs.writeFileSync(path, sql);
   try {
     const r = spawnSync(
-      root + "node_modules/.bin/wrangler",
+      process.execPath,
       [
+        fileURLToPath(
+          new URL("../node_modules/wrangler/bin/wrangler.js", import.meta.url),
+        ),
         "d1",
         "execute",
         "DB",
@@ -37,7 +40,19 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       ],
       { stdio: "inherit", cwd: root },
     );
+    if (r.error) throw Error("Could not start Wrangler: " + r.error.message);
     process.exitCode = r.status ?? 1;
+    if (r.status === 0)
+      console.log(
+        "Successfully seeded all 215 canonical test cases (" +
+          mode.slice(2) +
+          ").",
+      );
+    else
+      console.error(
+        "Seeding failed. Wrangler exit status: " +
+          (r.status ?? r.signal ?? "unknown"),
+      );
   } finally {
     fs.unlinkSync(path);
   }
