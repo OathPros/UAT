@@ -119,6 +119,18 @@ test("real Chromium: project subpath, join retry, invalid navigation, durable ou
       errors.push(msg.text());
   });
   await page.goto("http://127.0.0.1:8080/halo-kb-uat/");
+  assert.equal(
+    await page.locator("#joinForm [data-theme-picker] input").count(),
+    5,
+  );
+  await page.locator('#joinForm input[value="bubblegum"]').check();
+  await page.reload();
+  assert.equal(await page.getAttribute("html", "data-theme"), "bubblegum");
+  assert.equal(
+    await page.locator('#joinForm input[value="bubblegum"]').isChecked(),
+    true,
+  );
+  assert.equal(await page.locator("#privacy").count(), 0);
   await page.selectOption("#team", "UIT");
   await page.fill("#firstName", "Browser");
   await page.fill("#lastInitial", "T");
@@ -166,6 +178,89 @@ test("real Chromium: project subpath, join retry, invalid navigation, durable ou
     );
     throw e;
   }
+  // Theme changes are local appearance only: verify contrast and unchanged stored results.
+  const beforeThemes = (await db.prepare("SELECT * FROM results").all())
+    .results;
+  assert.equal(
+    await page.evaluate(() =>
+      Boolean(
+        document
+          .querySelector(".tester-grid")
+          .compareDocumentPosition(document.querySelector("#recoveryPanel")) &
+          Node.DOCUMENT_POSITION_FOLLOWING,
+      ),
+    ),
+    true,
+  );
+  assert.equal(
+    await page.evaluate(() =>
+      Boolean(
+        document
+          .querySelector(".tester-grid")
+          .compareDocumentPosition(document.querySelector("#syncBanner")) &
+          Node.DOCUMENT_POSITION_FOLLOWING,
+      ),
+    ),
+    true,
+  );
+  for (const theme of ["classic", "dark", "bubblegum", "ocean", "sage"]) {
+    await page.click("#themeButton");
+    await page.locator('#themeDialog input[value="' + theme + '"]').check();
+    await page.click("#closeTheme");
+    const contrasts = await page.evaluate(() => {
+      const rgb = (s) =>
+        s
+          .match(/[\d.]+/g)
+          .slice(0, 3)
+          .map(Number);
+      const lum = (s) =>
+        rgb(s)
+          .map((v) => {
+            const n = v / 255;
+            return n <= 0.04045 ? n / 12.92 : ((n + 0.055) / 1.055) ** 2.4;
+          })
+          .reduce((n, v, i) => n + v * [0.2126, 0.7152, 0.0722][i], 0);
+      const ratio = (a, b) =>
+        (Math.max(lum(a), lum(b)) + 0.05) / (Math.min(lum(a), lum(b)) + 0.05);
+      const pairs = [
+        ["body", "html"],
+        [".card", ".card"],
+        ["#comment", "#comment"],
+        ["#next", "#next"],
+        ["#syncText", "#syncBanner"],
+      ];
+      const measured = pairs.map(([fg, bg]) => {
+        const f = getComputedStyle(document.querySelector(fg)),
+          b = getComputedStyle(document.querySelector(bg));
+        return { selector: fg, ratio: ratio(f.color, b.backgroundColor) };
+      });
+      for (const button of document.querySelectorAll("#outcomes button")) {
+        const c = getComputedStyle(button);
+        measured.push({
+          selector: button.dataset.status,
+          ratio: ratio(c.color, c.backgroundColor),
+        });
+      }
+      return measured;
+    });
+    for (const c of contrasts)
+      assert.ok(
+        c.ratio >= 4.5,
+        theme + " " + c.selector + " text contrast " + c.ratio,
+      );
+  }
+  assert.deepEqual(
+    (await db.prepare("SELECT * FROM results").all()).results,
+    beforeThemes,
+  );
+  await page.setViewportSize({ width: 390, height: 844 });
+  assert.equal(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+    true,
+  );
+  await page.setViewportSize({ width: 1280, height: 900 });
   // Navigation remains immediate while all network mutations are blocked.
   await page.route("**/api/results/*", (route) => route.abort());
   await page.click("[data-status=partial_pass]");
@@ -185,6 +280,7 @@ test("real Chromium: project subpath, join retry, invalid navigation, durable ou
     ).comment,
     "Broken in browser",
   );
+  assert.equal(await page.isVisible("#saveAlert"), true);
   await page.reload();
   await page.waitForSelector("#tester:visible");
   await wait(page, () =>

@@ -178,6 +178,13 @@ function renderState() {
   if (!participant.active)
     $("syncText").textContent =
       "Session closed. Confirmed results remain available; pending edits are retained.";
+  const needsAttention = Boolean(
+    queue.error || conflicts || !participant.active,
+  );
+  $("saveAlert").hidden = !needsAttention;
+  $("saveAlertText").textContent = $("syncText").textContent;
+  $("retrySaves").hidden = !pending && !queue.error;
+  $("retryAlert").hidden = !pending && !queue.error;
   $("storageWarning").hidden = queue.storageOK;
   const id = current().id;
   $("saveState").textContent = queue.status(id);
@@ -237,6 +244,7 @@ $("next").onclick = () => navigate(selected + 1);
 for (const id of ["search", "category", "statusFilter"])
   $(id).addEventListener("input", renderList);
 $("retrySaves").onclick = () => queue.retry();
+$("retryAlert").onclick = () => queue.retry();
 $("keepLocal").onclick = () => {
   queue.resolve(current().id, true);
   renderCase();

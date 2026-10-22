@@ -76,3 +76,9 @@ Filter by session, team, outcome, exact category, priority and test ID; search n
 The obsolete interface is only a reference. Existing Sheets data is not silently imported. A migration is optional and not needed to launch; use a reviewed, separately scoped importer only after obtaining a real export and mapping its participant/session identifiers. Never infer secure identity from display names or replace current results with a spreadsheet.
 
 The API contracts and error semantics are documented in [API.md](API.md). Development dependencies are pinned in the lockfile. The Miniflare version matches the one shipped by the pinned Wrangler release (including its upstream beta version designation); no Node packages are shipped in the static frontend or used as runtime libraries by the deployed Worker.
+
+## Appearance
+
+Choose Classic, Midnight (dark), Bubblegum, Ocean or Sage between Team and Session join code. After joining, use **Appearance** beside your name to change it. The palette is stored only in the browser under `halo.theme`, independently of recovery credentials and pending results; it is not sent to D1 or included in exports. The admin page uses the same device preference. Outcome colours retain their meaning in every palette, with light backgrounds before selection and solid dark backgrounds after selection.
+
+Recovery-code controls and routine synchronization status appear below the test workspace. Failed saves, conflicts, and storage failures remain prominent above it. The participant footer warning was removed at the owner's request; the documented restrictions on using sensitive data remain unchanged. Appearance updates need only a GitHub Pages deployment, with no Worker deployment, database migration, reseeding or changes to existing results.
