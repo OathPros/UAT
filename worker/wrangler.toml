@@ -1,13 +1,13 @@
-name = "halo-kb-uat"
+name = "oathpros-uat-app"
 main = "src/index.js"
 compatibility_date = "2025-10-11"
 
 [vars]
-ALLOWED_ORIGINS = "http://localhost:8080,http://127.0.0.1:8080"
+ALLOWED_ORIGINS = "https://oathpros.github.io"
 TEAMS = "Client Services,CTS,SSB IT,OUR,UIT,Other"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "halo-kb-uat"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_name = "oathpros-uat-data"
+database_id = "8163a582-a918-44ab-9a64-7677dfd5fe72"
 migrations_dir = "migrations"

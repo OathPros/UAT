@@ -1,2 +1,2 @@
-// Public configuration only. Set the deployed HTTPS Worker URL before publishing.
-export const API_BASE_URL = "http://127.0.0.1:8787";
+// Public Worker origin. Never put credentials here.
+export const API_BASE_URL = "https://oathpros-uat-app.luke-gagliardi.workers.dev";
