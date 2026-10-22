@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' http://127.0.0.1:8787 http://localhost:8787 https://*.workers.dev; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'"
+    />
+    <title>Halo Knowledge Base UAT</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="brand"><b>KB</b>Knowledge Base UAT / HaloITSM</div>
+      <a href="./admin.html">Admin dashboard ↗</a>
+    </header>
+    <div id="message" role="alert"></div>
+    <main>
+      <section id="entry" class="narrow">
+        <div class="kicker">York University · UIT</div>
+        <h1>Test the knowledge experience.</h1>
+        <p class="muted">
+          A short, focused session. Clear outcomes. Confirmed saves.
+        </p>
+        <div class="card">
+          <h2>Join a testing session</h2>
+          <form id="joinForm">
+            <div class="two">
+              <div>
+                <label for="firstName">First name</label
+                ><input
+                  id="firstName"
+                  maxlength="40"
+                  required
+                  autocomplete="given-name"
+                />
+              </div>
+              <div>
+                <label for="lastInitial">Last initial</label
+                ><input id="lastInitial" maxlength="2" required />
+              </div>
+            </div>
+            <label for="team">Team</label
+            ><select id="team" required></select
+            ><label for="sessionCode">Session join code</label
+            ><input
+              id="sessionCode"
+              required
+              autocomplete="off"
+              spellcheck="false"
+            /><label
+              ><input id="remember" type="checkbox" checked /> Remember my
+              recovery code on this device</label
+            >
+            <p class="muted">
+              Use a trusted device. Your recovery code grants access to your
+              results.
+            </p>
+            <button id="joinButton" class="primary spaced">
+              Start testing →
+            </button>
+          </form>
+          <details>
+            <summary>Resume with a recovery code</summary>
+            <form id="restoreForm">
+              <label for="recovery">Recovery code</label
+              ><input
+                id="recovery"
+                required
+                autocomplete="off"
+                spellcheck="false"
+              /><button id="restoreButton" class="spaced">
+                Restore participant
+              </button>
+            </form>
+          </details>
+          <button id="retryRestore" hidden>Retry saved participant</button>
+        </div>
+      </section>
+      <section id="tester" hidden>
+        <div class="row between">
+          <div>
+            <div class="kicker" id="sessionName"></div>
+            <h1>My test cases</h1>
+            <p id="welcome"></p>
+          </div>
+          <button id="leave">Leave session</button>
+        </div>
+        <section id="recoveryPanel" class="card" hidden>
+          <h2>Save your recovery code</h2>
+          <p>
+            Shown here once. Keep it somewhere private to resume on another
+            device.
+          </p>
+          <p id="newToken" class="token"></p>
+          <button id="copyRecovery">Copy recovery code</button
+          ><button id="dismissRecovery">I have saved it</button>
+        </section>
+        <div class="banner" role="status" aria-live="polite">
+          <span id="syncText"></span>
+          <button id="retrySaves">Retry saves</button>
+        </div>
+        <div id="storageWarning" class="warning" hidden>
+          Browser storage is unavailable. Keep this tab open until all saves are
+          confirmed. Pending edits cannot survive closing or refreshing.
+        </div>
+        <div class="tester-grid">
+          <aside class="card sidebar">
+            <strong>Your progress</strong>
+            <p id="progressText"></p>
+            <progress
+              id="progress"
+              max="1"
+              value="0"
+              aria-label="Confirmed results"
+            ></progress
+            ><label for="search">Search test cases</label
+            ><input id="search" type="search" /><label for="category"
+              >Category</label
+            ><select id="category">
+              <option value="">All categories</option></select
+            ><label for="statusFilter">Outcome</label
+            ><select id="statusFilter">
+              <option value="">All outcomes</option>
+              <option value="unanswered">Not started</option>
+              <option value="pass">Pass</option>
+              <option value="partial_pass">Partial pass</option>
+              <option value="fail">Fail</option>
+              <option value="skipped">Skipped</option>
+            </select>
+            <nav
+              id="testList"
+              class="test-list"
+              aria-label="Assigned test cases"
+            ></nav>
+          </aside>
+          <section class="card">
+            <p class="kicker" id="testMeta"></p>
+            <h2 id="testTitle"></h2>
+            <div id="expected" class="expected"></div>
+            <fieldset>
+              <legend>Test outcome</legend>
+              <div id="outcomes" class="outcomes">
+                <button type="button" data-status="pass">✓ Pass</button
+                ><button type="button" data-status="partial_pass">
+                  ◐ Partial pass</button
+                ><button type="button" data-status="fail">✕ Fail</button
+                ><button type="button" data-status="skipped">↷ Skipped</button>
+              </div>
+            </fieldset>
+            <label for="comment"
+              >Comment (required for Fail and Partial pass)</label
+            ><textarea
+              id="comment"
+              maxlength="3000"
+              aria-describedby="validation privacy"
+            ></textarea>
+            <p id="validation" class="error" role="alert"></p>
+            <div id="conflict" class="warning" hidden>
+              <p id="conflictText"></p>
+              <button id="keepLocal">
+                Save my pending edit over this revision</button
+              ><button id="useServer">Use server result</button>
+            </div>
+            <div class="row between footer">
+              <div class="row">
+                <button id="previous">← Previous</button
+                ><button id="next" class="primary">Next test →</button>
+              </div>
+              <span id="saveState" role="status" aria-live="polite"></span>
+            </div>
+          </section>
+        </div>
+      </section>
+      <p id="privacy" class="warning spaced">
+        Use fictitious UAT tickets only. Do not enter student records, personal
+        information, production ticket details, passwords, or sensitive data in
+        comments. Join codes are invitation gates, not verified institutional
+        identity.
+      </p>
+    </main>
+  </body>
+</html>

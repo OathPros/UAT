@@ -1,0 +1,26 @@
+{
+  "name": "halo-kb-uat",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test worker/tests/*.test.js",
+    "dev": "wrangler dev --config worker/wrangler.toml",
+    "db:local": "wrangler d1 migrations apply DB --local --config worker/wrangler.toml",
+    "seed:local": "node scripts/seed-tests.js --local",
+    "web": "python3 -m http.server 8080 --directory web",
+    "test:unit": "node --test worker/tests/api.test.js worker/tests/queue.test.js",
+    "test:browser": "node --test worker/tests/browser.test.js",
+    "build": "wrangler deploy --dry-run --config worker/wrangler.toml",
+    "format": "prettier --write web worker/src worker/tests scripts package.json .github/workflows README.md DEPLOYMENT.md VALIDATION.md API.md",
+    "setup:local": "node scripts/local-key.js && npm run db:local && npm run seed:local"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "miniflare": "5.20261019.2-beta",
+    "prettier": "3.6.2",
+    "wrangler": "4.152.0"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

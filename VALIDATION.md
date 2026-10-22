@@ -1,0 +1,22 @@
+# Validation and launch status
+
+The implementation has been exercised locally with Node, Miniflare/workerd (real local D1 SQLite), and headless Chromium. No services have been deployed to Cloudflare or GitHub Pages and no live ten-person UAT has run.
+
+## Executed checks
+
+- Canonical 215-case definitions match `data/tests.json` exactly; 19 categories, 151 Core cases, unique IDs, nonempty required fields, CSV source parity and all 32 Quick Start IDs were validated. Seed twice does not duplicate cases or erase results.
+- API checks exercise all assignment modes and ordered custom IDs, join idempotency, hashed credentials, recovery identity, invalid statuses/comments/revisions, active-session/assignment checks, skipped outcomes, absence of unanswered results, authorization on all admin routes including CSV, own-results isolation, CORS/error/preflight handling, payload size limits, throttling, receipt replay, stale conflicts and mutation reuse.
+- A ten-participant API simulation joins in parallel; each writes the same test, repeats identical mutations concurrently, races two updates against the same revision, and saves the final revision. Exactly 20 distinct records remain over two tests, without cross-participant leakage. Summary/filtered pagination/CSV reconcile with D1. One run completed the concurrent activity in 453 ms in-process; this is not a WAN or Cloudflare latency claim.
+- Queue tests cover coalescing, rapid Pass → Fail → Partial changes, one in-flight write, retained newer edits after old acknowledgements, failed saves, lost acknowledgements, refresh/reload, immutable retry UUID/body, conflicts with explicit reconciliation, storage failure warnings, retry cap and validation parity.
+- Chromium serves the real static application under `/halo-kb-uat/`, validates ES module/assets/CORS, loses a committed join response and retries without duplicate registration, blocks invalid Fail navigation, persists pending edits through failed PUTs and refresh, retries to confirmation, restores in another profile, saves explicit Skip, and exercises administrator sign-in/session creation/reporting/CSV. Navigation while saves fail measured 39 ms in one run, including Playwright click dispatch.
+- A blocked join request times out after the configured 12 seconds with readable error and enabled retry. The subsequent retry succeeds.
+- Ten independent Chromium profiles use real local Worker/D1 requests with acknowledgements deliberately delayed by about 1.2 seconds. They rapidly change outcomes while a previous operation is in flight; five profiles reload with pending edits. All ten distinct rows reach the latest intended Partial result at version 2. One run completed in 8.1 seconds, including browser interactions and injected latency.
+- Wrangler local migration, idempotent seed and Worker deployment dry-run were executed. The frontend has no build step. Screenshots were inspected for participant/admin layout.
+
+The complete suite passed: **19 tests, zero failures, zero skips**. Full `npm audit` reports **zero vulnerabilities** after updating the pinned development tools. The Worker deployment dry-run also passed with the final toolchain. See terminal output for the most recent timings. Tests use ephemeral generated credentials and isolated databases; no production credentials or results are required. The browser fixture substitutes a local public API origin/CSP without editing production configuration.
+
+## Required live verification
+
+Use the launch gate in `DEPLOYMENT.md` before inviting testers. Outstanding checks include real Cloudflare account/bindings/secrets and quotas, remote migrations/seed, actual Pages project URL and HTTPS/CORS/CSP, real-browser Excel export, institutional network latency, ten simultaneous deployed identities, recovery after a deployed frontend update, and approved storage/retention policy. Local tests cannot establish any of those deployment outcomes.
+
+The frozen-lockfile `npm ci` path and repeatable local setup were also rerun. Existing local admin configuration was preserved, no new migration was needed, and all 215 seed upserts succeeded again. A separate HTTP startup smoke check used the actual documented Wrangler and Python services; its synthetic local session was closed after verification.

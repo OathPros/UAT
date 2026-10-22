@@ -1,0 +1,9 @@
+node_modules/
+.wrangler/
+.dev.vars
+.env
+playwright-report/
+test-results/
+*.log
+.cache/
+worker/.seed.sql
